@@ -1,0 +1,99 @@
+/* =====================================================================
+   shop.css  -  product cards, grids, filter panel, home carousels,
+   starter-kit rotator.  Used by: index, shop, categories/*, product
+   ===================================================================== */
+
+/* ---------- PRODUCT GRID + CARDS ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.card{background:#fff;border:1px solid #e8e8e4;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;cursor:pointer}
+.card:hover{transform:translateY(-4px);border-color:#c8c8c2;box-shadow:0 12px 40px rgba(0,0,0,.09)}
+.card .pic{background:linear-gradient(145deg,#f4f2ec,#eceae2);height:190px;display:grid;place-items:center;position:relative;overflow:hidden}
+.card .pic svg{width:86px;height:86px;transition:transform .22s ease}
+.card:hover .pic svg{transform:scale(1.09)}
+.card .cat-pill{position:absolute;top:12px;left:12px;background:rgba(255,255,255,.9);color:#444;font-size:10px;font-weight:700;letter-spacing:.06em;padding:4px 11px;border-radius:99px;text-transform:uppercase}
+.card .inst-badge{position:absolute;top:12px;right:12px;background:#00202f;color:#fff;font-size:10px;font-weight:600;letter-spacing:.04em;padding:4px 10px;border-radius:99px}
+.card .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.card .card-brand{font-size:10px;font-weight:700;letter-spacing:.12em;color:#aaa;text-transform:uppercase;margin-bottom:4px}
+.card h3{font-size:16px;font-weight:500;letter-spacing:-.01em;line-height:1.3;margin-bottom:6px;color:#111}
+.card h3 a{text-decoration:none;color:inherit}
+.card h3 a:hover{text-decoration:underline}
+.card .spec{font-size:13px;color:#888;line-height:1.55;flex:1;margin-bottom:16px}
+.card .row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #f0ede6;padding-top:14px}
+.card .price-wrap{display:flex;flex-direction:column;gap:2px}
+.card .price-main{font-size:19px;font-weight:600;letter-spacing:-.02em;color:#111;line-height:1}
+.card .add{background:var(--navy);color:#fff;border:none;border-radius:9px;padding:10px 18px;font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.03em;cursor:pointer;transition:background .15s,transform .12s;white-space:nowrap}
+.card .add:hover{background:#003a52;transform:scale(1.04)}
+.card .add:active{transform:scale(.96)}
+
+/* ---------- FILTER + SORT CONTROLS ---------- */
+.filterbtn{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1.5px solid #dddbd3;border-radius:10px;padding:9px 16px;font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.03em;color:#333;cursor:pointer;transition:border-color .15s,background .15s}
+.filterbtn:hover{border-color:var(--navy);background:#f8f6f1}
+.filterbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.fbadge{background:var(--navy);color:#fff;border-radius:99px;font-size:11px;font-weight:700;line-height:1;padding:3px 7px;min-width:18px;text-align:center}
+.sortrow{font-size:14px;display:flex;align-items:center;gap:8px;color:#555}
+.sortrow select{border:1.5px solid #dddbd3;border-radius:10px;padding:9px 12px;background:#fff;font:inherit;font-size:13px;color:#333;cursor:pointer;outline:none;transition:border-color .15s}
+.sortrow select:focus{border-color:var(--navy)}
+
+/* ---------- FILTER PANEL (slides in from the right) ---------- */
+#fveil{position:fixed;inset:0;background:rgba(0,0,0,.3);display:none;z-index:19;backdrop-filter:blur(2px)}
+#fveil.on{display:block}
+#fpanel{position:fixed;inset:0 0 0 auto;width:min(380px,100%);background:#fff;border-left:1px solid #e8e6df;transform:translateX(102%);transition:transform .22s cubic-bezier(.4,0,.2,1);z-index:20;display:flex;flex-direction:column;padding-top:env(safe-area-inset-top,0px);box-shadow:-8px 0 40px rgba(0,0,0,.08)}
+#fpanel.open{transform:none}
+@media(prefers-reduced-motion:reduce){#fpanel{transition:none}}
+.fh{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;border-bottom:1px solid #f0ede6}
+.fh h2{font-size:18px;font-weight:600;margin:0;letter-spacing:-.01em;color:#111}
+.fpclose{width:36px;height:36px;background:#f4f2ec;border:1.5px solid #dddbd3;border-radius:8px;display:grid;place-items:center;cursor:pointer;font-size:20px;line-height:1;color:#555;transition:background .15s,color .15s}
+.fpclose:hover{background:#eceae2;color:#000}
+.fbody{flex:1;overflow-y:auto;padding:0 24px 8px}
+.fsec{padding:22px 0;border-bottom:1px solid #f0ede6}
+.fsec:last-child{border-bottom:none}
+.fsec h3{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin:0 0 14px}
+.fopt{display:flex;align-items:center;gap:12px;padding:9px 12px;font-size:15px;color:#222;cursor:pointer;border-radius:8px;transition:background .12s;margin:0 -12px}
+.fopt:hover{background:#f8f6f1}
+.fopt input[type=radio],.fopt input[type=checkbox]{width:18px;height:18px;accent-color:var(--navy);cursor:pointer;flex-shrink:0}
+.fopt.soon{color:#bbb;cursor:default;pointer-events:none}
+.fopt.soon:hover{background:transparent}
+.soonlbl{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;background:#f0ede6;color:#aaa;padding:2px 8px;border-radius:99px;margin-left:auto}
+.frange{display:flex;align-items:center;gap:10px;margin-top:4px}
+.frange input{flex:1;min-width:0;font:inherit;font-size:14px;padding:10px 12px;border:1.5px solid #dddbd3;border-radius:9px;background:#fff;color:#333;outline:none;transition:border-color .15s}
+.frange input:focus{border-color:var(--navy)}
+.frange span{color:#bbb;font-size:16px;flex-shrink:0}
+.ffoot{padding:16px 24px calc(16px + env(safe-area-inset-bottom,0px));border-top:1px solid #f0ede6;display:flex;gap:10px}
+.ffoot-clear{flex:1;background:#fff;color:#444;border:1.5px solid #dddbd3;border-radius:10px;padding:13px;font:500 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer;transition:border-color .15s,background .15s;text-align:center}
+.ffoot-clear:hover{border-color:#999;background:#f8f6f1}
+.ffoot-apply{flex:2;background:var(--navy);color:#fff;border:1.5px solid var(--navy);border-radius:10px;padding:13px;font:500 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer;transition:background .15s;text-align:center}
+.ffoot-apply:hover{background:#003a52}
+
+/* ---------- STARTER-KIT ROTATOR (bottom of the Shop page) ---------- */
+.kit{background:#f4f2ec;border:1px solid #dddbd3;border-radius:20px;padding:0;margin-top:52px;overflow:hidden;position:relative;min-height:180px;display:block}
+.kit-slide{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:36px 40px;opacity:0;transition:opacity .6s ease;pointer-events:none}
+.kit-slide.active{opacity:1;pointer-events:auto;position:relative;inset:auto}
+.kit-slide .kit-tag{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin:0 0 8px;max-width:none}
+.kit-slide h2{font-size:22px;font-weight:400;margin:0 0 6px;color:#fff}
+.kit-slide p{margin:0;color:rgba(255,255,255,.65);max-width:36em;font-size:14px;line-height:1.6}
+.kit-slide .btn.kit-btn{background:#fff;color:#111;border-color:#fff;border-radius:10px;font-size:14px;padding:13px 22px;white-space:nowrap;flex-shrink:0}
+.kit-slide .btn.kit-btn:hover{background:#f4f2ec;border-color:#f4f2ec}
+.kit-slide.s0{background:linear-gradient(135deg,#00202f,#004060)}
+.kit-slide.s1{background:linear-gradient(135deg,#1a0a00,#5a1a00)}
+.kit-slide.s2{background:linear-gradient(135deg,#0a1a00,#1e4a00)}
+.kit-slide.s3{background:linear-gradient(135deg,#1a001a,#4a0040)}
+.kit-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.kit-dots span{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .3s,width .3s;cursor:pointer}
+.kit-dots span.on{background:#fff;width:14px;border-radius:3px}
+
+/* ---------- PRODUCT PHOTOS, SALE BADGE ---------- */
+.card .pic img{width:100%;height:100%;object-fit:contain;padding:12px;transition:transform .22s ease}
+.card:hover .pic img{transform:scale(1.05)}
+.card .sale-badge{position:absolute;left:12px;bottom:12px;background:#d90000;color:#fff;font-size:10px;font-weight:700;letter-spacing:.08em;padding:4px 11px;border-radius:99px}
+.price-was{font-size:12px;font-weight:400;color:#aaa;text-decoration:line-through;margin-left:7px;letter-spacing:0}
+
+/* ---------- PAGE NUMBERS ---------- */
+.pager{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:44px}
+.pg-nav{background:#fff;border:1.5px solid #dddbd3;border-radius:10px;padding:9px 16px;font:500 13px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;letter-spacing:.04em;color:#333;text-transform:uppercase;cursor:pointer;transition:border-color .15s,background .15s;min-width:84px}
+.pg-nav:hover{border-color:var(--navy);background:#f8f6f1}
+.pg-nums{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:center}
+.pg-nums button{min-width:38px;height:38px;padding:0 8px;background:#fff;border:1.5px solid transparent;border-radius:10px;font:500 14px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;color:#00202f;cursor:pointer;transition:background .15s,border-color .15s}
+.pg-nums button:hover{background:#f4f2ec;border-color:#dddbd3}
+.pg-nums button.on{background:var(--navy);color:#fff;border-color:var(--navy);cursor:default}
+.pg-dots{color:#aaa;padding:0 4px}
+@media(max-width:480px){.pg-nav{min-width:0;padding:9px 12px}}

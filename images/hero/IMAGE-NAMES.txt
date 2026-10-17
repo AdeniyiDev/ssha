@@ -1,0 +1,24 @@
+SECURE SIGHT - HOME PAGE SLIDER AND TILE PICTURES
+
+Save these in THIS folder (images/hero/). .jpg is best; .webp, .png and .jpeg also work for the banners.
+Each slide already has a built-in drawing (images/hero/art/*.svg). Your own banner picture, when you add it with the name below, covers the drawing.
+Until then the drawing shows - nothing breaks.
+
+SLIDER BANNERS (the picture fills the whole slide behind the text)
+  Size: 1920 x 800 px (anything 1600 px wide or more, same shape, is fine). Under ~300 KB.
+  Keep the LEFT 45% of the picture empty (plain background) because the text sits there.
+  Put your products on the RIGHT side - except the curtain slide, which is the other way round.
+
+  slide-1-locks.jpg           3D facial and biometric locks     (light background, locks on the right)
+  slide-2-tuya-devices.jpg    Smart home Tuya devices           (dark background, devices on the right)
+  slide-3-simplify.jpg        Simplify your life...             (light background, devices on the right)
+  slide-4-curtains.jpg        Transform your space...           (white background, curtain on the LEFT, right side empty)
+
+  app-logos.png               Strip of the app logos (Tuya, Smart Life, eWeLink, Alexa, Google Home), about 600 x 90 px,
+                              transparent or white background. Shown on slide 3 under the text. Optional.
+
+  slide-0-home.jpg            OPTIONAL full-slide banner for slide 1 (the "Build Your Smart Home" slide). If you add it,
+                              it covers the text and drawing, so only use a finished banner that already has its own text.
+
+TO CHANGE A SLIDE: open js/data.js and edit the HERO list (title, text, button link, colour).
+TO CHANGE THE SPEED: HERO_DELAY in js/data.js (5000 = 5 seconds).

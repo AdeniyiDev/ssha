@@ -1,0 +1,18 @@
+SECURE SIGHT - SOCKETS AND PLUGS PRODUCT IMAGE FILE NAMES
+
+Save each product picture in THIS folder (images/sockets-plugs/) using the exact file name below.
+File type: .jpg is best. .webp, .png and .jpeg also work. Do not type the extension twice.
+Best size: square, about 800 x 800 px, plain white background. Keep each file under ~200 KB.
+Until a picture is added, the site shows a small icon in its place - nothing breaks.
+
+No. | File name (add .jpg)                                                          | Product
+--------------------------------------------------------------------------------------------------------------------------------------------
+01  | sockets-plugs-01-smart-tuya-universal-energy-monitoring-smart-plug.jpg         | Smart Tuya Universal Energy Monitoring Smart Plug   [name completed by me - check]
+02  | sockets-plugs-02-smart-tuya-zigbee-socket-plug.jpg                             | Smart Tuya Zigbee Socket Plug
+03  | sockets-plugs-03-tuya-double-wall-wi-fi-socket-type-1.jpg                      | Tuya Double Wall Wi-Fi Socket Type 1
+04  | sockets-plugs-04-tuya-single-wall-wi-fi-socket-type-1.jpg                      | Tuya Single Wall Wi-Fi Socket Type 1
+05  | sockets-plugs-05-tuya-smart-socket-wi-fi-uk-plug-with-energy-monitoring.jpg    | Tuya Smart Socket Wi-Fi UK Plug with Energy Monitoring   [name completed by me - check]
+06  | sockets-plugs-06-tuya-smart-wi-fi-extension-power-strip.jpg                    | Tuya Smart Wi-Fi Extension/Power Strip
+07  | sockets-plugs-07-tuya-wi-fi-double-wall-universal-socket-with-usb.jpg          | Tuya Wi-Fi Double Wall Universal Socket with USB   [name completed by me - check]
+08  | sockets-plugs-08-wi-fi-tuya-16a-wall-single-socket-with-usb.jpg                | Wi-Fi Tuya 16A Wall Single Socket with USB   [name completed by me - check]
+09  | sockets-plugs-09-zigbee-tuya-wall-single-socket-usb-type-c.jpg                 | Zigbee Tuya Wall Single Socket USB Type-C

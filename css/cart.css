@@ -1,0 +1,93 @@
+/* =====================================================================
+   cart.css  -  cart page (cart.html) and checkout (checkout.html)
+   ===================================================================== */
+.cartpg{padding:40px 0 80px}
+.cart-header{margin-bottom:32px}
+.cart-header h1{font-size:30px;font-weight:400;margin-bottom:4px}
+.cart-header p{font-size:14px;color:#999;margin:0}
+.cgrid{display:grid;grid-template-columns:minmax(0,1.6fr) 360px;gap:48px;align-items:start;margin-top:8px}
+
+/* cart line items */
+.lines{border-radius:14px;border:1px solid #eceae2;overflow:hidden}
+.lines-head{display:grid;grid-template-columns:80px minmax(0,1fr) 120px 100px 40px;gap:16px;padding:12px 20px;background:#f8f6f1;border-bottom:1px solid #eceae2;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#aaa}
+.ln{display:grid;grid-template-columns:80px minmax(0,1fr) 120px 100px 40px;gap:16px;padding:20px;border-bottom:1px solid #f0ede6;align-items:center;background:#fff;transition:background .12s}
+.ln:last-child{border-bottom:none}
+.ln:hover{background:#fdfcf9}
+.ln .pic{height:80px;width:80px;background:linear-gradient(145deg,#f4f2ec,#eceae2);border-radius:10px;display:grid;place-items:center;flex-shrink:0}
+.ln .pic svg{width:44px;height:44px}
+.ln-info h3{font-size:15px;font-weight:500;line-height:1.3;margin:0 0 4px;color:#111}
+.ln-info h3 a{text-decoration:none;color:inherit}
+.ln-info h3 a:hover{text-decoration:underline}
+.ln-info .meta{font-size:12px;color:#aaa;margin:0 0 10px}
+.ln-qty{display:flex;align-items:center}
+.ln-price{font-size:15px;font-weight:600;color:#111;white-space:nowrap}
+.ln-rm{display:grid;place-items:center}
+.rm{background:none;border:none;padding:6px;border-radius:6px;color:#ccc;cursor:pointer;line-height:0;transition:color .15s,background .15s}
+.rm:hover{color:var(--red);background:#fdf5f5}
+.rm svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;pointer-events:none}
+
+/* order summary panel */
+.sum{background:#fafaf7;border:1px solid #eceae2;border-radius:16px;padding:28px;position:sticky;top:calc(88px + env(safe-area-inset-top,0px))}
+.sum-title{font-size:16px;font-weight:600;color:#111;margin:0 0 20px;letter-spacing:-.01em}
+.sr{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:8px 0;font-size:14px;color:#555;border-bottom:1px solid #f0ede6}
+.sr:last-of-type{border-bottom:none}
+.sr.tt{border-top:2px solid #222;border-bottom:none;padding-top:16px;margin-top:8px;font-size:18px;font-weight:600;color:#111}
+.sr.tt span:last-child{color:var(--navy)}
+.nudge{font-size:12px;color:#aaa;margin:6px 0 0;line-height:1.5}
+.sum-divider{border:none;border-top:1px solid #eceae2;margin:14px 0}
+.sum-actions{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.sum-actions .btn.dk{width:100%;font-size:15px;padding:15px;border-radius:11px;justify-content:center}
+.cont{display:flex;align-items:center;justify-content:center;gap:6px;font-size:14px;color:#888;text-decoration:none;padding:4px;transition:color .15s}
+.cont:hover{color:#111}
+.sum-items{margin-bottom:16px}
+.sum-item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:13px;color:#666;border-bottom:1px solid #f5f3ee}
+.sum-item:last-child{border-bottom:none}
+.sum-item span:last-child{font-weight:500;color:#333;white-space:nowrap}
+.free-badge{display:inline-block;background:#e8f5e9;color:#2e7d32;font-size:11px;font-weight:700;letter-spacing:.04em;padding:2px 8px;border-radius:99px}
+
+/* checkout form */
+.ckpg{padding:40px 0 80px}
+.ck-back{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#888;text-decoration:none;margin-bottom:28px;transition:color .15s}
+.ck-back:hover{color:#111}
+.ck-back svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ck-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:48px;align-items:start}
+.ck-form{background:#fff;border:1px solid #eceae2;border-radius:16px;padding:32px}
+.ck-form h2{font-size:20px;font-weight:500;margin:0 0 24px;color:#111;letter-spacing:-.01em}
+.field{margin-bottom:4px}
+.field label{display:block;margin-bottom:6px}
+.err{font-size:13px;color:var(--red);min-height:1.2em;margin:0 0 10px;display:flex;align-items:center;gap:6px}
+.err:before{content:"!";display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;background:var(--red);color:#fff;border-radius:50%;font-size:10px;font-weight:700;flex-shrink:0}
+.err:empty:before{display:none}
+.wa-note{display:flex;align-items:flex-start;gap:12px;background:#f0faf0;border:1px solid #c8e6c9;border-radius:10px;padding:14px 16px;margin-top:8px;font-size:13px;color:#444;line-height:1.5}
+.wa-note svg{width:20px;height:20px;fill:#25d366;flex-shrink:0;margin-top:1px}
+
+/* empty cart + order confirmed */
+.emptyc{text-align:center;padding:80px 24px 80px;max-width:440px;margin:0 auto}
+.empty-icon{width:72px;height:72px;background:#f4f2ec;border-radius:50%;display:grid;place-items:center;margin:0 auto 24px}
+.empty-icon svg{width:34px;height:34px;stroke:#aaa;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.emptyc h1{font-size:26px;margin:0 0 10px;font-weight:400;color:#111}
+.emptyc p{color:#999;margin:0 0 32px;font-size:15px;line-height:1.6}
+.donepg{text-align:center;padding:80px 24px;max-width:480px;margin:0 auto}
+.done-icon{width:72px;height:72px;background:#e8f5e9;border-radius:50%;display:grid;place-items:center;margin:0 auto 24px}
+.done-icon svg{width:34px;height:34px;stroke:#2e7d32;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.donepg h1{font-size:26px;font-weight:400;margin:0 0 10px;color:#111}
+.donepg p{color:#777;font-size:15px;line-height:1.6;margin:0 0 32px}
+.donepg .btn.dk{font-size:15px;padding:14px 28px}
+.donepg .cont{margin-top:14px}
+
+@media(max-width:900px){
+  .cgrid,.ck-grid{grid-template-columns:1fr;gap:28px}
+  .sum{position:static}
+  .lines-head{display:none}
+  .ln{grid-template-columns:70px minmax(0,1fr) auto auto;grid-template-rows:auto auto;row-gap:8px}
+  .ln-qty{grid-column:2;grid-row:2}
+  .ln-price{grid-column:3;grid-row:1;align-self:start}
+  .ln-rm{grid-column:4;grid-row:1;align-self:start}
+}
+@media(max-width:480px){
+  .cart-header h1{font-size:24px}
+  .ln .pic{width:60px;height:60px}
+  .ln{grid-template-columns:60px minmax(0,1fr) auto auto}
+}
+
+.ln .pic img{width:100%;height:100%;object-fit:contain;padding:6px}

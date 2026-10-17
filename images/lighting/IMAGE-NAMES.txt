@@ -1,0 +1,54 @@
+SECURE SIGHT - LIGHTING PRODUCT IMAGE FILE NAMES
+
+Save each product picture in THIS folder (images/lighting/) using the exact file name below.
+File type: .jpg is best. .webp, .png and .jpeg also work. Do not type the extension twice.
+Best size: square, about 800 x 800 px, plain white background. Keep each file under ~200 KB.
+Until a picture is added, the site shows a small icon in its place - nothing breaks.
+
+No. | Page | File name (add .jpg)                                                      | Product
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01  |  1   | lighting-01-1ch-7-32v-smart-tuya-wi-fi-relay-module.jpg                    | 1CH 7-32V Smart Tuya Wi-Fi Relay Module
+02  |  1   | lighting-02-20a-tuya-zigbee-smart-water-heater-ac-switch.jpg               | 20A Tuya Zigbee Smart Water Heater/AC Switch   [name completed by me - check]
+03  |  1   | lighting-03-20amp-ewelink-wi-fi-smart-water-heater-ac-switch.jpg           | 20Amp eWeLink Wi-Fi Smart Water Heater/AC Switch   [name completed by me - check]
+04  |  1   | lighting-04-20amp-tuya-wi-fi-smart-water-heater-ac-switch.jpg              | 20Amp Tuya Wi-Fi Smart Water Heater/AC Switch   [name completed by me - check]
+05  |  1   | lighting-05-2ch-7-32v-smart-tuya-wi-fi-relay-module.jpg                    | 2CH 7-32V Smart Tuya Wi-Fi Relay Module
+06  |  1   | lighting-06-40a-tuya-zigbee-smart-water-heater-ac-switch.jpg               | 40A Tuya Zigbee Smart Water Heater/AC Switch   [name completed by me - check]
+07  |  1   | lighting-07-40amp-tuya-wi-fi-smart-water-heater-ac-switch.jpg              | 40Amp Tuya Wi-Fi Smart Water Heater/AC Switch   [name completed by me - check]
+08  |  1   | lighting-08-4ch-tuya-wi-fi-rf-smart-switch-module.jpg                      | 4CH Tuya Wi-Fi RF Smart Switch Module
+09  |  1   | lighting-09-63a-wi-fi-smart-energy-meter-kwh-metering.jpg                  | 63A Wi-Fi Smart Energy Meter (kWh Metering)   [name completed by me - check]
+10  |  1   | lighting-10-63amps-1p-n-tuya-wi-fi-smart-breaker.jpg                       | 63Amps 1P+N Tuya Wi-Fi Smart Breaker
+11  |  1   | lighting-11-four-gang-smart-tuya-wi-fi-smart-switch.jpg                    | Four Gang Smart Tuya Wi-Fi Smart Switch   [name completed by me - check]
+12  |  1   | lighting-12-four-gang-tuya-smart-life-wi-fi-smart-led-light-switch.jpg     | Four Gang Tuya Smart Life Wi-Fi Smart LED Light Switch   [name completed by me - check]
+13  |  1   | lighting-13-four-gang-wi-fi-rf-433mhz-ewelink-app-switch.jpg               | Four Gang Wi-Fi RF 433MHz eWeLink App Switch   [name completed by me - check]
+14  |  1   | lighting-14-m9-pro-8-button-uk-tuya-zigbee-smart-wall-switch.jpg           | M9 Pro 8-Button UK Tuya Zigbee Smart Wall Switch   [name completed by me - check]
+15  |  1   | lighting-15-one-gang-smart-tuya-wi-fi-switch-ds101.jpg                     | One Gang Smart Tuya Wi-Fi Switch DS101
+16  |  1   | lighting-16-one-gang-tuya-smart-life-wi-fi-smart-led-light-switch.jpg      | One Gang Tuya Smart Life Wi-Fi Smart LED Light Switch   [name completed by me - check]
+17  |  2   | lighting-17-one-gang-tuya-wi-fi-press-button-switch-ds.jpg                 | One Gang Tuya Wi-Fi Press Button Switch DS   [name completed by me - check]
+18  |  2   | lighting-18-one-gang-tuya-zigbee-smart-switch-ds101z.jpg                   | One Gang Tuya Zigbee Smart Switch DS101Z
+19  |  2   | lighting-19-one-gang-wi-fi-rf-433mhz-ewelink-app-switch.jpg                | One Gang Wi-Fi RF 433MHz eWeLink App Switch   [name completed by me - check]
+20  |  2   | lighting-20-sonoff-dual-r3-dual-relay-module-wi-fi-diy-smart-switch.jpg    | Sonoff Dual R3 Dual Relay Module Wi-Fi DIY Smart Switch   [name completed by me - check]
+21  |  2   | lighting-21-sonoff-power-meter-switch-powr320a.jpg                         | Sonoff Power Meter Switch POWR320A
+22  |  2   | lighting-22-sonoff-wi-fi-smart-switch-t3eu-1c.jpg                          | Sonoff Wi-Fi Smart Switch T3EU-1C
+23  |  2   | lighting-23-sonoff-wi-fi-smart-switch-t3eu-2c.jpg                          | Sonoff Wi-Fi Smart Switch T3EU-2C
+24  |  2   | lighting-24-sonoff-wi-fi-smart-switch-t3eu-3c.jpg                          | Sonoff Wi-Fi Smart Switch T3EU-3C
+25  |  2   | lighting-25-three-gang-smart-tuya-wi-fi-smart-switch.jpg                   | Three Gang Smart Tuya Wi-Fi Smart Switch   [name completed by me - check]
+26  |  2   | lighting-26-three-gang-tuya-smart-life-wi-fi-smart-led-light-switch.jpg    | Three Gang Tuya Smart Life Wi-Fi Smart LED Light Switch   [name completed by me - check]
+27  |  2   | lighting-27-three-gang-tuya-wi-fi-press-button-switch-ds.jpg               | Three Gang Tuya Wi-Fi Press Button Switch DS   [name completed by me - check]
+28  |  2   | lighting-28-three-gang-tuya-zigbee-smart-switch-ds103z.jpg                 | Three Gang Tuya Zigbee Smart Switch DS103Z
+29  |  2   | lighting-29-three-gang-wi-fi-rf-433mhz-ewelink-app-switch.jpg              | Three Gang Wi-Fi RF 433MHz eWeLink App Switch   [name completed by me - check]
+30  |  2   | lighting-30-tpr01-b-tuya-smart-knob-central-controller.jpg                 | TPR01-B | Tuya Smart Knob Central Controller   [name completed by me - check]
+31  |  2   | lighting-31-tuya-lcd-smart-wi-fi-water-heater-ac-switch.jpg                | Tuya LCD Smart Wi-Fi Water Heater/AC Switch   [name completed by me - check]
+32  |  2   | lighting-32-tuya-m8-pro-smart-scene-light-switch-with-4-button-control.jpg | Tuya M8 Pro Smart Scene Light Switch with 4-Button Control   [name completed by me - check]
+33  |  3   | lighting-33-tuya-smart-bluetooth-rgb-bulb.jpg                              | Tuya Smart Bluetooth RGB Bulb
+34  |  3   | lighting-34-tuya-smart-control-curtain-wi-fi-switch.jpg                    | Tuya Smart Control Curtain Wi-Fi Switch
+35  |  3   | lighting-35-tuya-smart-home-5-in-1-lcd-wi-fi-touch-light-switch.jpg        | Tuya Smart Home 5 in 1 LCD Wi-Fi Touch Light Switch   [name completed by me - check]
+36  |  3   | lighting-36-tuya-smart-rotary-dimmer-switch.jpg                            | Tuya Smart Rotary Dimmer Switch
+37  |  3   | lighting-37-tuya-smart-wi-fi-remote-control-ceiling-fan-switch.jpg         | Tuya Smart Wi-Fi Remote Control Ceiling Fan Switch   [name completed by me - check]
+38  |  3   | lighting-38-tuya-wi-fi-smart-rgb-bulb.jpg                                  | Tuya Wi-Fi Smart RGB Bulb
+39  |  3   | lighting-39-tuya-wi-fi-rgbwcw-led-downlight.jpg                            | Tuya Wi-Fi RGBWCW LED Downlight
+40  |  3   | lighting-40-tuya-zigbee-3-0-signal-repeater-usb-signal-extender.jpg        | Tuya Zigbee 3.0 Signal Repeater USB Signal Extender   [name completed by me - check]
+41  |  3   | lighting-41-tuya-zigbee-3-5-inch-smart-wall-switch-f3.jpg                  | Tuya Zigbee 3.5 Inch Smart Wall Switch F3   [name completed by me - check]
+42  |  3   | lighting-42-two-gang-smart-tuya-wi-fi-smart-switch.jpg                     | Two Gang Smart Tuya Wi-Fi Smart Switch   [name completed by me - check]
+43  |  3   | lighting-43-two-gang-tuya-wi-fi-press-button-switch-ds.jpg                 | Two Gang Tuya Wi-Fi Press Button Switch DS   [name completed by me - check]
+44  |  3   | lighting-44-two-gang-tuya-zigbee-smart-switch-ds102z.jpg                   | Two Gang Tuya Zigbee Smart Switch DS102Z
+45  |  3   | lighting-45-two-gang-wi-fi-rf-433mhz-ewelink-app-switch.jpg                | Two Gang Wi-Fi RF 433MHz eWeLink App Switch   [name completed by me - check]

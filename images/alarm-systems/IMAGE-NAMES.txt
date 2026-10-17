@@ -1,0 +1,24 @@
+SECURE SIGHT - ALARM SYSTEMS PRODUCT IMAGE FILE NAMES
+
+Save each product picture in THIS folder (images/alarm-systems/) using the exact file name below.
+File type: .jpg is best. .webp, .png and .jpeg also work. Do not type the extension twice.
+Best size: square, about 800 x 800 px, plain white background. Keep each file under ~200 KB.
+Until a picture is added, the site shows a small icon in its place - nothing breaks.
+
+No. | File name (add .jpg)                                                          | Product
+--------------------------------------------------------------------------------------------------------------------------------------------
+01  | (uses the SAME picture already listed under: images/sensors/sensors-01-433mhz-pir-motion-detection-pt03.jpg - nothing to add here) | 433MHz PIR Motion Detection | PT03
+02  | (uses the SAME picture already listed under: images/sensors/sensors-02-433mhz-rf-smoke-detector-sensor.jpg - nothing to add here) | 433MHz RF Smoke Detector/Sensor
+03  | alarm-systems-03-433mhz-signal-repeater-wireless-extender-for-alarms.jpg       | 433MHz Signal Repeater Wireless Extender for Alarms   [name completed by me - check]
+04  | (uses the SAME picture already listed under: images/sensors/sensors-03-433mhz-wireless-door-sensor-pt101.jpg - nothing to add here) | 433MHz Wireless Door Sensor | PT101
+05  | alarm-systems-05-gsm-wf-103-tuya-wi-fi-433mhz-gsm-alarm-system.jpg             | GSM-WF-103 | Tuya Wi-Fi 433MHz GSM Alarm System   [name completed by me - check]
+06  | alarm-systems-06-gsm-wf-105-tuya-gsm-wi-fi-433mhz-alarm-system.jpg             | GSM-WF-105 | Tuya GSM Wi-Fi 433MHz Alarm System   [name completed by me - check]
+07  | alarm-systems-07-gsm-wf-107-tuya-wi-fi-433mhz-gsm-alarm-system.jpg             | GSM-WF-107 | Tuya Wi-Fi 433MHz GSM Alarm System   [name completed by me - check]
+08  | alarm-systems-08-outdoor-indoor-433mhz-wireless-alarm-siren.jpg                | Outdoor / Indoor 433MHz Wireless Alarm Siren   [name completed by me - check]
+09  | alarm-systems-09-outdoor-433mhz-waterproof-solar-alarm-siren.jpg               | Outdoor 433MHz Waterproof Solar Alarm Siren   [name completed by me - check]
+10  | (uses the SAME picture already listed under: images/sensors/sensors-08-smoke-and-carbon-monoxide-detector.jpg - nothing to add here) | Smoke and Carbon Monoxide Detector
+11  | (uses the SAME picture already listed under: images/sensors/sensors-14-tuya-wi-fi-smart-natural-gas-alarm.jpg - nothing to add here) | Tuya Wi-Fi Smart Natural Gas Alarm
+12  | (uses the SAME picture already listed under: images/sensors/sensors-15-tuya-wi-fi-smoke-detector-sd01w.jpg - nothing to add here) | Tuya Wi-Fi Smoke Detector SD01W
+13  | (uses the SAME picture already listed under: images/sensors/sensors-16-tuya-wi-fi-smoke-detector-sd02.jpg - nothing to add here) | Tuya Wi-Fi Smoke Detector SD02
+14  | (uses the SAME picture already listed under: images/sensors/sensors-22-tuya-zigbee-smart-smoke-detector-sd1z.jpg - nothing to add here) | Tuya Zigbee Smart Smoke Detector SD1Z
+15  | (uses the SAME picture already listed under: images/sensors/sensors-23-tuya-zigbee-smoke-detector-sd02.jpg - nothing to add here) | Tuya Zigbee Smoke Detector SD02

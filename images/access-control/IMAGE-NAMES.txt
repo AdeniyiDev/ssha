@@ -1,0 +1,75 @@
+SECURE SIGHT - ACCESS CONTROL PRODUCT IMAGE FILE NAMES
+
+Save each product picture in THIS folder (images/access-control/) using the exact file name below.
+File type: .jpg is best. .webp, .png and .jpeg also work. Do not type the extension twice.
+Best size: square, about 800 x 800 px, plain white background. Keep each file under ~200 KB.
+Until a picture is added, the site shows a small icon in its place - nothing breaks.
+
+No. | Page | File name (add .jpg)                                                              | Product
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01  |  1   | access-control-01-40a-power-supply-universal-card-energy-saving-switch.jpg       | 40A Power Supply Universal Card Energy Saving Switch   [name completed by me - check]
+02  |  1   | access-control-02-85-series-mortise-for-aluminum-slim-smart-lock.jpg             | 85 Series Mortise for Aluminum Slim Smart Lock   [name completed by me - check]
+03  |  1   | access-control-03-cb-k61-smart-tuya-ble-cabinet-drawer-lock.jpg                  | CB-K61 | Smart Tuya BLE Cabinet, Drawer Lock
+04  |  1   | access-control-04-contemporary-smart-tthotel-ttlock-hotel-door-lock.jpg          | Contemporary Smart TTHotel/TTLock Hotel Door Lock   [name completed by me - check]
+05  |  1   | access-control-05-dc-12v-1ch-rf-remote-control-module.jpg                        | DC 12V 1CH RF Remote Control Module
+06  |  1   | access-control-06-deluxe-ttlock-tthotel-app-lock-for-hotel.jpg                   | Deluxe TTLock/TTHotel App Lock for Hotel   [name completed by me - check]
+07  |  1   | access-control-07-electronic-lock-tuya-bluetooth-fingerprint-padlock.jpg         | Electronic Lock Tuya Bluetooth Fingerprint Padlock   [name completed by me - check]
+08  |  1   | access-control-08-es2-ttlock-tthotel-smart-energy-saving-switch.jpg              | ES2 TTLock/TTHotel Smart Energy Saving Switch   [name completed by me - check]
+09  |  1   | access-control-09-es3-tthotel-40a-energy-saving-switch-saver.jpg                 | ES3 TTHotel 40A Energy Saving Switch Saver
+10  |  1   | access-control-10-exclusive-smart-tthotel-ttlock-hotel-door-lock.jpg             | Exclusive Smart TTHotel/TTLock Hotel Door Lock   [name completed by me - check]
+11  |  1   | access-control-11-gds01-tuya-smart-outdoor-waterproof-door-lock.jpg              | GDS01 | Tuya Smart Outdoor Waterproof Door Lock   [name completed by me - check]
+12  |  1   | access-control-12-gdsf1-tuya-wi-fi-face-recognition-double-sided-lock.jpg        | GDSF1 | Tuya Wi-Fi Face Recognition Double-Sided Lock   [name completed by me - check]
+13  |  1   | access-control-13-high-quality-5050-stainless-steel-mortise.jpg                  | High Quality 5050 Stainless Steel Mortise
+14  |  1   | access-control-14-high-security-waterproof-outdoor-smart-lock.jpg                | High Security Waterproof Outdoor Smart Lock   [name completed by me - check]
+15  |  1   | access-control-15-ht-w01-ttlock-wi-fi-smart-lock-with-5050-mortise.jpg           | HT-W01 | TTLock Wi-Fi Smart Lock with 5050 Mortise   [name completed by me - check]
+16  |  1   | access-control-16-modern-ttlock-app-hotel-apartments-door-lock.jpg               | Modern TTLock App Hotel / Apartments Door Lock   [name completed by me - check]
+17  |  2   | access-control-17-mos-z01-tuya-smart-intelligent-biometric-door-lock.jpg         | MOS Z01 | Tuya Smart Intelligent Biometric Door Lock   [name completed by me - check]
+18  |  2   | access-control-18-mos-706-ttlock-smart-ble-lock.jpg                              | MOS-706 | TTLock Smart BLE Lock
+19  |  2   | access-control-19-mos-707sh-b-smart-ttlock-ble-door-lock.jpg                     | MOS-707SH-B | Smart TTLock BLE Door Lock
+20  |  2   | access-control-20-mos-920w-waterproof-tuya-3d-face-door-lock.jpg                 | MOS-920W | Waterproof Tuya 3D Face Door Lock   [name completed by me - check]
+21  |  2   | access-control-21-mos-aslk-2-face-id-smart-slim-aluminum-door-lock.jpg           | MOS-ASLK-2 | Face ID Smart Slim Aluminum Door Lock   [name completed by me - check]
+22  |  2   | access-control-22-mos-aslk1-smart-tuya-wi-fi-door-lock.jpg                       | MOS-ASLK1 | Smart Tuya Wi-Fi Door Lock
+23  |  2   | access-control-23-mos-df01tt-ttlock-wi-fi-3d-facial-biometric-door-lock.jpg      | MOS-DF01TT | TTLock Wi-Fi 3D Facial Biometric Door Lock   [name completed by me - check]
+24  |  2   | access-control-24-mos-h13ttwf-ttlock-app-wi-fi-control-door-lock.jpg             | MOS-H13TTWF | TTLock App Wi-Fi Control Door Lock   [name completed by me - check]
+25  |  2   | access-control-25-mos-h51-tuya-smart-semi-automatic-camera-door-lock.jpg         | MOS-H51 | Tuya Smart Semi Automatic Camera Door Lock   [name completed by me - check]
+26  |  2   | access-control-26-mos-k36-tuya-smart-wi-fi-door-lock.jpg                         | MOS-K36 | Tuya Smart Wi-Fi Door Lock
+27  |  2   | access-control-27-mos-k36s-3d-facial-recognition-tuya-lock.jpg                   | MOS-K36S | 3D Facial Recognition Tuya Lock
+28  |  2   | access-control-28-mos-k49-tuya-wi-fi-app-fully-automatic-smart-door-lock.jpg     | MOS-K49 | Tuya Wi-Fi App Fully Automatic Smart Door Lock   [name completed by me - check]
+29  |  2   | access-control-29-mos-k51-tuya-smart-fingerprint-door-lock.jpg                   | MOS-K51 | Tuya Smart Fingerprint Door Lock   [name completed by me - check]
+30  |  2   | access-control-30-mos-k9-3d-facial-recognition-tuya-lock.jpg                     | MOS-K9 | 3D Facial Recognition Tuya Lock
+31  |  2   | access-control-31-mos-lai06-tuya-digital-security-lock-3d-face-recognition.jpg   | MOS-LAI06 | Tuya Digital Security Lock 3D Face Recognition   [name completed by me - check]
+32  |  2   | access-control-32-mos-lb1-tuya-wi-fi-3d-facial-smart-lock.jpg                    | MOS-LB1 | Tuya Wi-Fi 3D Facial Smart Lock   [name completed by me - check]
+33  |  3   | access-control-33-mos-p3-3d-face-fingerprint-door-lock.jpg                       | MOS-P3 | 3D Face & Fingerprint Door Lock   [name completed by me - check]
+34  |  3   | access-control-34-mos-p303-hgl-3d-facial-recognition-door-lock.jpg               | MOS-P303(HGL) | 3D Facial Recognition Door Lock   [name completed by me - check]
+35  |  3   | access-control-35-mos-p5-ai-tuya-smart-lock-with-face-recognition.jpg            | MOS-P5-AI | Tuya Smart Lock with Face Recognition   [name completed by me - check]
+36  |  3   | access-control-36-mos-p7-3d-facial-tuya-smart-lock.jpg                           | MOS-P7 | 3D Facial Tuya Smart Lock
+37  |  3   | access-control-37-mos-p9w-israeli-tuya-wi-fi-smart-israeli-lock.jpg              | MOS-P9W-Israeli | Tuya Wi-Fi Smart Israeli Lock   [name completed by me - check]
+38  |  3   | access-control-38-mos-q6-3d-facial-recognition-tuya-lock.jpg                     | MOS-Q6 | 3D Facial Recognition Tuya Lock
+39  |  3   | access-control-39-mos-r10pro-3d-facial-tuya-biometric-door-lock.jpg              | MOS-R10PRO | 3D Facial Tuya Biometric Door Lock   [name completed by me - check]
+40  |  3   | access-control-40-mos-s1-intelligent-tuya-smart-door-lock.jpg                    | MOS-S1 | Intelligent Tuya Smart Door Lock   [name completed by me - check]
+41  |  3   | access-control-41-mos-sfl1-outdoor-camera-tuya-slim-lock.jpg                     | MOS-SFL1 | Outdoor Camera Tuya Slim Lock
+42  |  3   | access-control-42-mos-xf13-biometric-facial-recognition-door-lock.jpg            | MOS-XF13 | Biometric Facial Recognition Door Lock   [name completed by me - check]
+43  |  3   | access-control-43-mos-xf16-face-recognition-door-lock.jpg                        | MOS-XF16 | Face Recognition Door Lock   [name completed by me - check]
+44  |  3   | access-control-44-mos-xf3-3d-face-recognition-tuya-wi-fi-lock.jpg                | MOS-XF3 | 3D Face Recognition Tuya Wi-Fi Lock   [name completed by me - check]
+45  |  3   | access-control-45-mos-z02-tuya-ip68-water-resistance-smart-lock.jpg              | MOS-Z02 | Tuya IP68 Water Resistance Smart Lock   [name completed by me - check]
+46  |  3   | access-control-46-pd-c1tt-smart-ble-biometric-ttlock-padlock.jpg                 | PD-C1TT | Smart BLE Biometric TTLock Padlock   [name completed by me - check]
+47  |  3   | access-control-47-pd-c2-smart-tuya-ble-padlock.jpg                               | PD-C2 | Smart Tuya BLE Padlock
+48  |  3   | access-control-48-smart-door-lock-display-rack.jpg                               | Smart Door Lock Display Rack
+49  |  4   | access-control-49-smart-face-id-biometric-door-lock-mos-df14.jpg                 | Smart Face ID Biometric Door Lock MOS-DF14
+50  |  4   | access-control-50-smart-full-automatic-biometric-lock-mos-d1.jpg                 | Smart Full Automatic Biometric Lock MOS-D1
+51  |  4   | access-control-51-smart-lock-body-mortise-6068.jpg                               | Smart Lock Body Mortise 6068
+52  |  4   | access-control-52-smart-lock-door-cylinder-key.jpg                               | Smart Lock Door Cylinder Key
+53  |  4   | access-control-53-smart-rfid-13-56mhz-token-key-card.jpg                         | Smart RFID 13.56MHz Token Key Card
+54  |  4   | access-control-54-smart-tuya-3d-facial-biometric-door-lock.jpg                   | Smart Tuya 3D Facial Biometric Door Lock   [name completed by me - check]
+55  |  4   | access-control-55-smart-writable-ic-electronic-card-for-smart-locks.jpg          | Smart Writable IC Electronic Card for Smart Locks   [name completed by me - check]
+56  |  4   | access-control-56-strong-power-lithium-battery-for-smart-locks.jpg               | Strong Power Lithium Battery for Smart Locks   [name completed by me - check]
+57  |  4   | access-control-57-ttlock-tthotel-e03-hotel-card-reader.jpg                       | TTLock / TTHotel E03 Hotel Card Reader   [name completed by me - check]
+58  |  4   | access-control-58-ttlock-g2-bluetooth-gateway.jpg                                | TTLock G2 Bluetooth Gateway
+59  |  4   | access-control-59-ttlock-g3-ble-gateway.jpg                                      | TTLock G3 BLE Gateway
+60  |  4   | access-control-60-ttlock-r1-ble-remote-key-flop.jpg                              | TTLock R1 BLE Remote Key Flop
+61  |  4   | access-control-61-ttlock-tthotel-e5-usb-card-encoder-13-56mhz.jpg                | TTLock TTHotel E5 USB Card Encoder 13.56MHz   [name completed by me - check]
+62  |  4   | access-control-62-tuya-smart-3d-face-id-door-lock-mos-q12.jpg                    | Tuya Smart 3D Face ID Door Lock MOS-Q12
+63  |  4   | access-control-63-tuya-wi-fi-smart-biometric-lock-for-doors.jpg                  | Tuya Wi-Fi Smart Biometric Lock for Doors   [name completed by me - check]
+64  |  4   | access-control-64-tuya-wi-fi-electronic-smart-door-lock-mos.jpg                  | Tuya Wi-Fi Electronic Smart Door Lock MOS   [name completed by me - check]
+65  |  5   | access-control-65-tuya-wi-fi-smart-lock-mos-707.jpg                              | Tuya Wi-Fi Smart Lock MOS-707
+66  |  5   | access-control-66-x5-tuya-smart-lock-3d-facial-recognition.jpg                   | X5 Tuya Smart Lock 3D Facial Recognition   [name completed by me - check]

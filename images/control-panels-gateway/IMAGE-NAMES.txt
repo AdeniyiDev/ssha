@@ -1,0 +1,36 @@
+SECURE SIGHT - CONTROL PANELS AND GATEWAY PRODUCT IMAGE FILE NAMES
+
+Save each product picture in THIS folder (images/control-panels-gateway/) using the exact file name below.
+File type: .jpg is best. .webp, .png and .jpeg also work. Do not type the extension twice.
+Best size: square, about 800 x 800 px, plain white background. Keep each file under ~200 KB.
+Until a picture is added, the site shows a small icon in its place - nothing breaks.
+
+No. | Page | File name (add .jpg)                                                          | Product
+------------------------------------------------------------------------------------------------------------------------------------------------------
+01  |  1   | control-panels-gateway-01-10-inch-tuya-smart-control-panel-f10-4.jpg           | 10 Inch Tuya Smart Control Panel | F10-4
+02  |  1   | control-panels-gateway-02-12-inch-smart-tuya-control-panel-f12-4.jpg           | 12 Inch Smart Tuya Control Panel | F12-4
+03  |  1   | control-panels-gateway-03-3-5-inch-tuya-control-panel.jpg                      | 3.5 Inch Tuya Control Panel
+04  |  1   | control-panels-gateway-04-4-inch-android-zigbee-gateway-bluetooth-control-panel.jpg | 4 Inch Android Zigbee Gateway, Bluetooth Control Panel   [name completed by me - check]
+05  |  1   | control-panels-gateway-05-4-inch-android-zigbee-gateway-bluetooth-control-panel-2.jpg | 4 Inch Android Zigbee Gateway, Bluetooth Control Panel (2)   [name completed by me - check]
+06  |  1   | control-panels-gateway-06-4-inch-control-panel-built-in-alexa-wi-fi-smart-voice.jpg | 4 Inch Control Panel Built-In Alexa Wi-Fi Smart Voice Panel   [name completed by me - check]
+07  |  1   | control-panels-gateway-07-6-inch-tuya-control-panel-f6.jpg                     | 6 Inch Tuya Control Panel | F6
+08  |  1   | control-panels-gateway-08-7-inch-tuya-smart-host-control-panel-q7.jpg          | 7 Inch Tuya Smart Host Control Panel | Q7
+09  |  1   | control-panels-gateway-09-8-inch-tuya-control-panel-f8.jpg                     | 8 Inch Tuya Control Panel | F8
+10  |  1   | control-panels-gateway-10-broadlink-rm4-mini-universal-remote-controller.jpg   | BroadLink RM4 Mini Universal Remote Controller   [name completed by me - check]
+11  |  1   | control-panels-gateway-11-broadlink-rm4-pro-universal-remote-for-smart-home.jpg | BroadLink RM4 Pro Universal Remote for Smart Home   [name completed by me - check]
+12  |  1   | control-panels-gateway-12-dmdco-tuya-zigbee-dual-gateway.jpg                   | DMDCO | Tuya Zigbee Dual Gateway
+13  |  1   | control-panels-gateway-13-q10-tuya-10-inches-smart-home-2-zone-control-panel.jpg | Q10 | Tuya 10 Inches Smart Home 2 Zone Control Panel   [name completed by me - check]
+14  |  1   | control-panels-gateway-14-t10-tuya-wall-amplifier-android-control-panel.jpg    | T10 | Tuya Wall Amplifier Android Control Panel   [name completed by me - check]
+15  |  1   | control-panels-gateway-15-thp12-z-v5-tuya-zigbee-3-0-gateway-hub-wi-fi.jpg     | THP12-Z-V5 | Tuya Zigbee 3.0 Gateway Hub Wi-Fi   [name completed by me - check]
+16  |  1   | control-panels-gateway-16-tpa08-8-inches-tuya-control-panel-8-pro.jpg          | TPA08 | 8 Inches Tuya Control Panel 8 Pro   [name completed by me - check]
+17  |  2   | control-panels-gateway-17-tpa10-10-1-inch-smart-home-tuya-control-panel.jpg    | TPA10 | 10.1 Inch Smart Home Tuya Control Panel   [name completed by me - check]
+18  |  2   | (uses the SAME picture already listed under: images/lighting/lighting-30-tpr01-b-tuya-smart-knob-central-controller.jpg - nothing to add here) | TPR01-B | Tuya Smart Knob Central Controller
+19  |  2   | (uses the SAME picture already listed under: images/access-control/access-control-57-ttlock-tthotel-e03-hotel-card-reader.jpg - nothing to add here) | TTLock / TTHotel E03 Hotel Card Reader
+20  |  2   | (uses the SAME picture already listed under: images/access-control/access-control-58-ttlock-g2-bluetooth-gateway.jpg - nothing to add here) | TTLock G2 Bluetooth Gateway
+21  |  2   | (uses the SAME picture already listed under: images/access-control/access-control-59-ttlock-g3-ble-gateway.jpg - nothing to add here) | TTLock G3 BLE Gateway
+22  |  2   | control-panels-gateway-22-tuya-5-inch-control-panel-with-zigbee-gateway.jpg    | Tuya 5 Inch Control Panel with Zigbee Gateway   [name completed by me - check]
+23  |  2   | control-panels-gateway-23-tuya-smart-wi-fi-3-in-1-wireless-remote-controller.jpg | Tuya Smart Wi-Fi 3-in-1 Wireless Remote Controller   [name completed by me - check]
+24  |  2   | (uses the SAME picture already listed under: images/lighting/lighting-41-tuya-zigbee-3-5-inch-smart-wall-switch-f3.jpg - nothing to add here) | Tuya Zigbee 3.5 Inch Smart Wall Switch F3
+25  |  2   | control-panels-gateway-25-tuya-zigbee-homekit-wired-gateway.jpg                | Tuya Zigbee HomeKit Wired Gateway
+26  |  2   | control-panels-gateway-26-tuya-zigbee-multi-mode-zigbee-and-bluetooth-gateway.jpg | Tuya Zigbee Multi-Mode Zigbee and Bluetooth Gateway   [name completed by me - check]
+27  |  2   | control-panels-gateway-27-wired-zigbee-tuya-gateway.jpg                        | Wired Zigbee Tuya Gateway

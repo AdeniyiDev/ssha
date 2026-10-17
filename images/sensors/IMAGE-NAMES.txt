@@ -1,0 +1,32 @@
+SECURE SIGHT - SENSORS PRODUCT IMAGE FILE NAMES
+
+Save each product picture in THIS folder (images/sensors/) using the exact file name below.
+File type: .jpg is best. .webp, .png and .jpeg also work. Do not type the extension twice.
+Best size: square, about 800 x 800 px, plain white background. Keep each file under ~200 KB.
+Until a picture is added, the site shows a small icon in its place - nothing breaks.
+
+No. | Page | File name (add .jpg)                                                    | Product
+--------------------------------------------------------------------------------------------------------------------------------------------
+01  |  1   | sensors-01-433mhz-pir-motion-detection-pt03.jpg                        | 433MHz PIR Motion Detection | PT03
+02  |  1   | sensors-02-433mhz-rf-smoke-detector-sensor.jpg                         | 433MHz RF Smoke Detector/Sensor
+03  |  1   | sensors-03-433mhz-wireless-door-sensor-pt101.jpg                       | 433MHz Wireless Door Sensor | PT101
+04  |  1   | sensors-04-aqara-fp2-wi-fi-presence-sensor.jpg                         | Aqara FP2 Wi-Fi Presence Sensor
+05  |  1   | sensors-05-non-smart-human-body-presence-sensor.jpg                    | Non Smart Human Body Presence Sensor
+06  |  1   | sensors-06-smart-tuya-human-presence-sensor.jpg                        | Smart Tuya Human Presence Sensor   [name completed by me - check]
+07  |  1   | sensors-07-smart-tuya-wi-fi-pir-motion-detector.jpg                    | Smart Tuya Wi-Fi PIR Motion Detector
+08  |  1   | sensors-08-smoke-and-carbon-monoxide-detector.jpg                      | Smoke and Carbon Monoxide Detector   [name completed by me - check]
+09  |  1   | sensors-09-sonoff-pir3-rf-433mhz-motion-sensor.jpg                     | Sonoff PIR3-RF 433MHz Motion Sensor
+10  |  1   | sensors-10-tuya-millimeter-wave-radar-wall-mounted-presence-sensor.jpg | Tuya Millimeter Wave Radar Wall Mounted Presence Sensor   [name completed by me - check]
+11  |  1   | sensors-11-tuya-wi-fi-door-window-sensor.jpg                           | Tuya Wi-Fi Door/Window Sensor   [name completed by me - check]
+12  |  1   | sensors-12-tuya-wi-fi-ir-universal-remote-controller.jpg               | Tuya Wi-Fi IR Universal Remote Controller   [name completed by me - check]
+13  |  1   | sensors-13-tuya-wi-fi-pir-motion-detector-sensor-pir2.jpg              | Tuya Wi-Fi PIR Motion Detector Sensor PIR2
+14  |  1   | sensors-14-tuya-wi-fi-smart-natural-gas-alarm.jpg                      | Tuya Wi-Fi Smart Natural Gas Alarm   [name completed by me - check]
+15  |  1   | sensors-15-tuya-wi-fi-smoke-detector-sd01w.jpg                         | Tuya Wi-Fi Smoke Detector SD01W
+16  |  1   | sensors-16-tuya-wi-fi-smoke-detector-sd02.jpg                          | Tuya Wi-Fi Smoke Detector SD02
+17  |  2   | (uses the SAME picture as Lighting: images/lighting/lighting-40-tuya-zigbee-3-0-signal-repeater-usb-signal-extender.jpg - nothing to add here) | Tuya Zigbee 3.0 Signal Repeater USB Signal Extender
+18  |  2   | sensors-18-tuya-zigbee-gas-leakage-detector.jpg                        | Tuya Zigbee Gas Leakage Detector
+19  |  2   | sensors-19-tuya-zigbee-pir-motion-detector-sensor-pir2-z.jpg           | Tuya Zigbee PIR Motion Detector Sensor PIR2-Z
+20  |  2   | sensors-20-tuya-zigbee-pir-motion-sensor.jpg                           | Tuya Zigbee PIR Motion Sensor
+21  |  2   | sensors-21-tuya-zigbee-smart-door-window-sensor.jpg                    | Tuya Zigbee Smart Door/Window Sensor
+22  |  2   | sensors-22-tuya-zigbee-smart-smoke-detector-sd1z.jpg                   | Tuya Zigbee Smart Smoke Detector SD1Z
+23  |  2   | sensors-23-tuya-zigbee-smoke-detector-sd02.jpg                         | Tuya Zigbee Smoke Detector SD02
