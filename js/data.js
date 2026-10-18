@@ -266,6 +266,17 @@ var P=[
 /* ---------- HOME PAGE SLIDER ----------
    Slide 1 (the animated camera + house) is built into index.html.
    The slides below come after it. They change on their own every HERO_DELAY ms.
+   video   (optional) a video file inside /images/ , e.g. "hero/curtains.mp4". Replaces the drawing/banner on that slide.
+           Plays muted, from the start, each time the slide appears. Keep it short and under ~2 MB. Portrait or landscape both work.
+   poster  (optional, with video) a still picture shown until the video loads, e.g. "hero/curtains-poster.jpg"
+   items   (with live:"showroom") the products to show, up to 5, in this order: the first starts in the middle, the next four float around it.
+           {id:162, photo:"home/showroom/panel.webp", label:"Control panel"}
+           id = the product's id in the list below: the real name, price and link come from it.
+           photo = a picture inside /images/. It must be a CUT-OUT (transparent background, .webp or .png) so it floats on the navy.
+           label = the short name shown under it while it floats (optional; the sub-category is used if you leave it out).
+           If you leave photo out, the product's own shop picture is used on a small light tile.
+   live    (optional) "phone" = the working phone demo (js/phone.js), "showroom" = the product showroom (js/showroom.js), "locks" = the locks display with running lights (js/locks.js), instead of the drawing. The drawing (art) is still the fallback.
+   delay   (optional) how long THIS slide stays, in ms. Use the video length (11.3s video = 11500). Without it, HERO_DELAY is used.
    tone    "light" = dark text on a light slide, "dark" = white text on a dark slide
    bg      slide colour shown behind (and until) your banner picture loads
    art     the built-in drawing for this slide (an .svg in /images/hero/art/)
@@ -276,10 +287,22 @@ var P=[
    href    where the button goes (relative to the site root)                         */
 var HERO_DELAY=5000;
 var HERO=[
-  {tone:"light",bg:"#eceff1",tag:"Tuya smart locks",title:"3D facial and biometric locks",text:"",btn:"Shop now",href:"categories/access-control.html",img:"hero/slide-1-locks",art:"hero/art/locks.svg"},
-  {tone:"dark",bg:"#262b6b",title:"Smart home Tuya devices",text:"With a wide range of Tuya devices, making your home smart just got a lot easier.",btn:"Shop now",href:"shop.html",img:"hero/slide-2-tuya-devices",art:"hero/art/devices.svg"},
-  {tone:"light",bg:"#e4e8ea",title:"Simplify your life with smart home devices",text:"Transform your space, enjoy effortless control, enhanced comfort and energy savings, all at the touch of a button.",apps:"Works with Tuya Smart, Smart Life, eWeLink, Alexa and Google Home.",logos:"hero/app-logos",btn:"Shop now",href:"shop.html",img:"hero/slide-3-simplify",art:"hero/art/simplify.svg"},
-  {tone:"light",bg:"#ffffff",flip:true,title:"Transform your space with effortless elegance",text:"Our Tuya-powered motorised curtains combine intelligent design with seamless automation, letting you control natural light with a touch, a voice command or on a schedule. Elevate everyday living with the luxury of smart movement.",btn:"Shop now",href:"categories/curtain-accessories.html",img:"hero/slide-4-curtains",art:"hero/art/curtains.svg"}
+  {tone:"light",bg:"#eceff1",tag:"Tuya smart locks",title:"3D facial and biometric locks",text:"",btn:"Shop now",href:"categories/access-control.html",img:"hero/slide-1-locks",art:"hero/art/locks.svg",live:"locks",delay:7000,
+   items:[
+     {kind:"handle",photo:"home/locks/handle.webp"},   /* left pedestal: keypad + handle lock */
+     {kind:"face",  photo:"home/locks/face.webp"},     /* middle pedestal: 3D face recognition lock */
+     {kind:"handle",photo:"home/locks/handle.webp"}    /* right pedestal */
+   ]},
+  {tone:"dark",bg:"#262b6b",title:"Smart home Tuya devices",text:"With a wide range of Tuya devices, making your home smart just got a lot easier.",btn:"Shop now",href:"shop.html",img:"hero/slide-2-tuya-devices",art:"hero/art/devices.svg",live:"showroom",delay:11200,
+   items:[
+     {id:162,photo:"home/showroom/panel.webp", label:"Control panel"},       /* 3.5 Inch Tuya Control Panel (starts in the middle) */
+     {id:82, photo:"home/showroom/lock.webp",  label:"Face lock"},           /* GDSF1 Tuya Wi-Fi Face Recognition Double-Sided Lock */
+     {id:68, photo:"home/showroom/socket.webp",label:"USB wall socket"},     /* Tuya Wi-Fi Double Wall Universal Socket with USB */
+     {id:191,photo:"home/showroom/alarm.webp", label:"GSM alarm system"},    /* GSM-WF-103 Tuya Wi-Fi 433MHz GSM Alarm System */
+     {id:152,photo:"home/showroom/smoke.webp", label:"Smoke detector"}       /* Tuya Wi-Fi Smoke Detector SD02 */
+   ]},
+  {tone:"light",bg:"#e4e8ea",title:"Simplify your life with smart home devices",text:"Transform your space, enjoy effortless control, enhanced comfort and energy savings, all at the touch of a button.",apps:"Works with Tuya Smart, Smart Life, eWeLink, Alexa and Google Home.",btn:"Shop now",href:"shop.html",img:"hero/slide-3-simplify",art:"hero/art/simplify.svg",live:"phone",delay:10000},
+  {tone:"light",bg:"#ffffff",flip:true,title:"Transform your space with effortless elegance",text:"Our Tuya-powered motorised curtains combine intelligent design with seamless automation, letting you control natural light with a touch, a voice command or on a schedule. Elevate everyday living with the luxury of smart movement.",btn:"Shop now",href:"categories/curtain-accessories.html",video:"hero/curtains.mp4",poster:"hero/curtains-poster.jpg",delay:11500}
 ];
 
 
@@ -291,15 +314,15 @@ var HERO=[
               art = picture file inside /images/home/ (now my drawings, .svg). To use your own photo, put it in that folder and write its full file name here, e.g. art:"locks-photo.jpg".
    HOME_PICKS: exact product names (as in the list above) for the "Popular picks" row. Change them any time. */
 var HOME_CATS=[
-  {slug:"access-control",cls:"cat-xl dk",art:"cat-access-control.svg",photos:["photos/access-control-1.jpg","photos/access-control-2.jpg"],desc:"Face recognition, fingerprint and app locks, plus hotel locks, cards and gateways."},
-  {slug:"lighting",cls:"cat-l t2",art:"cat-lighting.svg",photos:["photos/lighting-1.jpg"],desc:"Smart switches, bulbs and downlights for Wi-Fi and Zigbee homes."},
-  {slug:"control-panels-gateway",cls:"cat-m",art:"cat-control-panels-gateway.svg",photos:["photos/control-panels-gateway-1.jpg"],desc:"Touch panels, gateways and universal remotes."},
-  {slug:"sockets-plugs",cls:"cat-m t3",art:"cat-sockets-plugs.svg",photos:["photos/sockets-plugs-1.png"],desc:"Smart plugs, wall sockets and power strips."},
-  {slug:"sensors",cls:"cat-m t3",art:"cat-sensors.svg",photos:["photos/sensors-1.png"],desc:"Motion, door, smoke and gas sensors."},
-  {slug:"alarm-systems",cls:"cat-m t3",art:"cat-alarm-systems.svg",photos:["photos/alarm-systems-1.png"],desc:"GSM alarm systems, sirens and detectors."},
-  {slug:"curtain-accessories",cls:"cat-m t3",art:"cat-curtain-accessories.svg",photos:["photos/curtain-accessories-1.png"],desc:"Curtain motors, tracks and blinds."},
-  {slug:"amplifiers",cls:"cat-m t2",art:"cat-amplifiers.svg",photos:["photos/amplifiers-1.jpg"],desc:"Wall amplifiers and touch screen audio panels."},
-  {slug:"non-smart",cls:"cat-wide t3",art:"cat-non-smart.svg",photos:["photos/non-smart-1.png"],desc:"CCTV cameras and recorders."}
+  {slug:"access-control",cls:"cat-xl dk",art:"cat-access-control.svg",photos:["photos/access-control-1-cut.webp","photos/access-control-2-cut.webp"],desc:"Face recognition, fingerprint and app locks, plus hotel locks, cards and gateways."},
+  {slug:"lighting",cls:"cat-l t2",art:"cat-lighting.svg",photos:["photos/lighting-1.webp"],desc:"Smart switches, bulbs and downlights for Wi-Fi and Zigbee homes."},
+  {slug:"control-panels-gateway",cls:"cat-m",art:"cat-control-panels-gateway.svg",photos:["photos/control-panels-gateway-1.webp"],desc:"Touch panels, gateways and universal remotes."},
+  {slug:"sockets-plugs",cls:"cat-m t3",art:"cat-sockets-plugs.svg",photos:["photos/sockets-plugs-1-cut.webp"],desc:"Smart plugs, wall sockets and power strips."},
+  {slug:"sensors",cls:"cat-m t3",art:"cat-sensors.svg",photos:["photos/sensors-1-cut.webp"],desc:"Motion, door, smoke and gas sensors."},
+  {slug:"alarm-systems",cls:"cat-m t3",art:"cat-alarm-systems.svg",photos:["photos/alarm-systems-1-cut.webp"],desc:"GSM alarm systems, sirens and detectors."},
+  {slug:"curtain-accessories",cls:"cat-m t3",art:"cat-curtain-accessories.svg",photos:["photos/curtain-accessories-1-cut.webp"],desc:"Curtain motors, tracks and blinds."},
+  {slug:"amplifiers",cls:"cat-m t2",art:"cat-amplifiers.svg",photos:["photos/amplifiers-1.webp"],desc:"Wall amplifiers and touch screen audio panels."},
+  {slug:"non-smart",cls:"cat-wide t3",art:"cat-non-smart.svg",photos:["photos/non-smart-1-cut.webp"],desc:"CCTV cameras and recorders."}
 ];
 var HOME_PICKS=["Tuya Wi-Fi Smart RGB Bulb","MOS-K36 | Tuya Smart Wi-Fi Door Lock","Tuya Wi-Fi Smoke Detector SD02","Smart Tuya Zigbee Socket Plug"];
 

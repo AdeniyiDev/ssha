@@ -1,0 +1,89 @@
+/* =====================================================================
+   locks.css  -  the LIVE locks slide (see js/locks.js).
+   Layout (text left, display right) comes from phone.css (.slide.has-live, .live).
+   The stage is 702 x 522 "units" (the old drawing, cropped); 1 unit = --u.
+   ===================================================================== */
+
+.live.lk{--LH:min(calc(var(--H) - var(--pt) - 72px),520px);height:var(--LH);aspect-ratio:702/522}
+.lks{position:relative;width:100%;height:100%;--u:calc(var(--LH)/522)}
+@media(min-width:1700px){.live.lk{--LH:min(calc(var(--H) - var(--pt) - 72px),620px)}}
+/* this display is wider than the others, so this slide gets a wider column too */
+.slide.live-locks .slide-in{max-width:1320px}
+@media(min-width:1700px){.slide.live-locks .slide-in{max-width:1500px}}
+/* laptops: keep the text clear of the arrows, and shrink the display so text + display always fit side by side */
+@media(max-width:1380px) and (min-width:1181px){
+  .slide.live-locks .slide-in{padding-left:76px;padding-right:76px}
+  .live.lk{--LH:min(calc(var(--H) - var(--pt) - 72px),520px,calc((100vw - 152px - 500px - 58px)/1.345))}
+}
+@media(max-width:1180px) and (min-width:901px){.live.lk{--LH:min(calc(var(--H) - var(--pt) - 72px),calc((100vw - 152px - 440px - 44px)/1.345))}}
+
+/* ---------- the set: circle, pedestals, shadows (same look as the old drawing) ---------- */
+.lks i{display:block;position:absolute}
+.lk-c{border-radius:50%;background:#dfe4e8}
+.sh{border-radius:50%;background:#000;opacity:.07}
+.pd{background:#f7f8f9;border-radius:calc(var(--u)*6)}
+.pd:before,.pd:after{content:"";position:absolute;left:0;right:0;height:12%;border-radius:calc(var(--u)*6)}
+.pd:before{top:0;background:#fff}
+.pd:after{bottom:0;background:#d9dfe3}
+
+/* ---------- the real lock photos ---------- */
+.lkp{position:absolute}
+.lkp img{display:block;width:100%;height:100%;user-select:none;-webkit-user-drag:none;filter:drop-shadow(0 calc(var(--u)*5) calc(var(--u)*7) rgba(0,0,0,.3))}
+.lkp i{pointer-events:none}
+
+/* ---------- lights ---------- */
+/* keypad: every key has a soft glow. Lit softly when still; when running, a bright light races
+   round the pad (clockwise, then the middle keys) and starts again - quickly. */
+.k{aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;opacity:.4;mix-blend-mode:screen;
+   background:radial-gradient(circle,rgba(200,248,255,.95) 0,rgba(90,205,255,.6) 34%,rgba(90,205,255,0) 70%)}
+.live.run .k{animation:lkKey 1.7s linear infinite backwards;animation-delay:calc(var(--o)*.085s + var(--ph)*1s)}
+@keyframes lkKey{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}
+  3%{opacity:1;transform:translate(-50%,-50%) scale(1.35)}
+  14%{opacity:.4;transform:translate(-50%,-50%) scale(1)}
+  32%,100%{opacity:0;transform:translate(-50%,-50%) scale(.9)}
+}
+
+/* camera ring (face lock): a bright arc spins round it */
+.rg{aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;opacity:0;mix-blend-mode:screen;
+    background:conic-gradient(rgba(120,220,255,0) 0deg,rgba(120,220,255,0) 235deg,rgba(150,235,255,.85) 320deg,#fff 357deg,rgba(120,220,255,0) 360deg);
+    -webkit-mask:radial-gradient(circle closest-side,transparent 0 70%,#000 74% 100%);
+            mask:radial-gradient(circle closest-side,transparent 0 70%,#000 74% 100%)}
+.live.run .rg{opacity:1;animation:lkSpin 1.15s linear infinite;animation-delay:calc(var(--ph)*-1s)}
+@keyframes lkSpin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* fingerprint sensors: a ring of light pulses outward */
+.fp{aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;opacity:0;border:calc(var(--u)*1.8) solid rgba(110,220,255,.95)}
+.fp.g{border-color:rgba(90,255,150,.95)}
+.live.run .fp{animation:lkPulse 1.6s ease-out infinite;animation-delay:calc(var(--ph)*-1s)}
+@keyframes lkPulse{0%{opacity:.95;transform:translate(-50%,-50%) scale(.75)}100%{opacity:0;transform:translate(-50%,-50%) scale(2.3)}}
+
+/* green status bar (face lock): light sweeps along it */
+.br{height:calc(var(--u)*7);transform:translateY(-50%);opacity:0;mix-blend-mode:screen;
+    background:linear-gradient(90deg,rgba(190,255,200,0),rgba(215,255,220,.95),rgba(190,255,200,0)) no-repeat;background-size:40% 100%;background-position:-50% 0}
+.live.run .br{opacity:1;animation:lkBar 1.2s ease-in-out infinite}
+@keyframes lkBar{from{background-position:-50% 0}to{background-position:150% 0}}
+
+/* face screen (face lock): a scan line sweeps down */
+.lscan{overflow:hidden;border-radius:calc(var(--u)*3)}
+.lscan:after{content:"";position:absolute;left:0;right:0;top:-18%;height:18%;opacity:0;mix-blend-mode:screen;
+          background:linear-gradient(180deg,rgba(120,220,255,0),rgba(120,225,255,.6) 70%,rgba(235,252,255,.95))}
+.live.run .lscan:after{opacity:1;animation:lkScan 2.6s ease-in-out infinite}
+@keyframes lkScan{from{top:-18%}to{top:100%}}
+
+/* card reader (handle lock): glows softly */
+.cd{width:11%;aspect-ratio:3/4;transform:translate(-50%,-50%);opacity:0;border-radius:calc(var(--u)*4);mix-blend-mode:screen;
+    background:radial-gradient(ellipse,rgba(120,225,255,.7),rgba(120,225,255,0) 72%)}
+.live.run .cd{animation:lkCard 1.8s ease-in-out infinite alternate;animation-delay:calc(var(--ph)*-1s)}
+@keyframes lkCard{from{opacity:.05}to{opacity:.9}}
+
+/* (reduced motion: phone.css already switches every animation off; the keys stay softly lit) */
+
+/* ---------- phones and tablets in portrait: text on top, the display underneath ---------- */
+@media(max-width:900px){
+  .live.lk{--LH:min(300px,calc((100vw - 16px)*522/702),calc(var(--H)*.44 - 46px));aspect-ratio:auto;align-items:flex-end;height:44%}
+  .lks{flex:none;width:calc(var(--LH)*702/522);height:var(--LH)}
+}
+@media(max-width:760px){
+  .live.lk{--LH:min(300px,calc((100vw - 16px)*522/702),calc(var(--H)*.44 - 46px))}
+}

@@ -21,19 +21,21 @@ function loadBanners(){
   });
 }
 function slideHtml(sl,i,total){
-  var dk=sl.tone=="dark";
-  return '<div class="slide'+(sl.flip?' flip':'')+'" data-tone="'+sl.tone+'" style="background:'+sl.bg+'" role="group" aria-roledescription="slide" aria-label="'+(i+2)+' of '+total+'" aria-hidden="true">'+
-    (sl.art?'<img class="slide-art" src="'+BASE+'images/'+sl.art+'" alt="">':'')+
-    '<img class="slide-img" data-banner="'+BASE+'images/'+sl.img+'" alt="">'+
+  var dk=sl.tone=="dark",live=!!(sl.live&&window.LiveSlides&&LiveSlides[sl.live]);
+  return '<div class="slide'+(sl.flip?' flip':'')+(sl.video?' has-vid':'')+(live?' has-live live-'+sl.live:'')+'" data-tone="'+sl.tone+'" style="background:'+sl.bg+'" role="group" aria-roledescription="slide" aria-label="'+(i+2)+' of '+total+'" aria-hidden="true">'+
+    (sl.video||live?'':(sl.art?'<img class="slide-art" src="'+BASE+'images/'+sl.art+'" alt="">':'')+
+       '<img class="slide-img" data-banner="'+BASE+'images/'+sl.img+'" alt="">')+
     '<p class="slide-brand">Secure Sight<span>Home Autos</span></p>'+
-    '<div class="slide-in"><div class="slide-copy">'+
+    '<div class="slide-in">'+
+    (sl.video?'<div class="slide-vid"><video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"'+(sl.poster?' data-poster="'+BASE+'images/'+sl.poster+'"':'')+' src="'+BASE+'images/'+sl.video+'"></video></div>':'')+
+    '<div class="slide-copy">'+
       (sl.tag?'<span class="slide-tag">'+sl.tag+'</span>':'')+
       '<h2>'+sl.title+'</h2>'+
       (sl.text?'<p>'+sl.text+'</p>':'')+
       (sl.apps?'<p class="slide-apps">'+sl.apps+'</p>':'')+
       (sl.logos?'<img class="slide-logos" data-banner="'+BASE+'images/'+sl.logos+'" alt="">':'')+
       '<a class="btn lg '+(dk?'light':'dk')+'" href="'+BASE+sl.href+'">'+sl.btn+'</a>'+
-    '</div></div></div>';
+    '</div>'+(live?LiveSlides[sl.live].html(sl):'')+'</div></div>';
 }
 function initSlider(){
   var box=$("slider");if(!box)return;
@@ -42,17 +44,42 @@ function initSlider(){
     '<button class="sl-arrow prev" aria-label="Previous slide"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg></button>'+
     '<button class="sl-arrow next" aria-label="Next slide"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg></button>'+
     '<div class="sl-dots" role="group" aria-label="Choose slide">'+Array.apply(null,Array(total)).map(function(_,i){return '<button data-slide="'+i+'" aria-label="Go to slide '+(i+1)+'"></button>'}).join("")+'</div>');
-  var slides=box.querySelectorAll(".slide"),dots=box.querySelectorAll(".sl-dots button"),idx=0,timer=null;
+  var slides=box.querySelectorAll(".slide"),dots=box.querySelectorAll(".sl-dots button"),idx=0,timer=null,holdT=null;
+  /* live slides (the working phone): create them now, play only while their slide is showing */
+  box.querySelectorAll(".live").forEach(function(el){var k=LiveSlides[el.getAttribute("data-live")];if(k)el._live=k.init(el)});
+  function wake(sl){
+    if(window.wakeImgs)wakeImgs(sl);
+    var v=sl.querySelector("video[data-poster]");if(v){v.poster=v.getAttribute("data-poster");v.removeAttribute("data-poster")}
+  }
   function show(n){
     idx=(n+slides.length)%slides.length;
+    wake(slides[idx]);wake(slides[(idx+1)%slides.length]);
     slides.forEach(function(s,i){s.classList.toggle("on",i==idx);s.setAttribute("aria-hidden",i==idx?"false":"true")});
     dots.forEach(function(d,i){d.classList.toggle("on",i==idx);if(i==idx)d.setAttribute("aria-current","true");else d.removeAttribute("aria-current")});
     box.setAttribute("data-tone",slides[idx].getAttribute("data-tone"));
+    /* video slides: play from the start when shown, pause when hidden (no autoplay if the visitor prefers reduced motion) */
+    var still=window.matchMedia&&matchMedia("(prefers-reduced-motion:reduce)").matches;
+    var saver=!!(navigator.connection&&navigator.connection.saveData);
+    function fetchVid(v){if(v&&!v._pre&&!saver){v._pre=1;v.preload="auto";v.load()}}
+    fetchVid(slides[idx].querySelector("video"));fetchVid(slides[(idx+1)%slides.length].querySelector("video"));   /* this slide's video, and the next one's */
+    slides.forEach(function(s,i){
+      var v=s.querySelector("video");if(!v)return;
+      if(i==idx&&!still&&!saver){try{v.currentTime=0}catch(e){}var pr=v.play();if(pr&&pr.catch)pr.catch(function(){})}
+      else v.pause();
+    });
+    slides.forEach(function(s,i){
+      var lv=s.querySelector(".live");if(!lv||!lv._live)return;
+      if(i==idx)lv._live.play(still);else lv._live.stop();
+    });
     if(window.flyUpdate)window.flyUpdate();
   }
-  /* Moves to the next slide every HERO_DELAY ms, always. Clicking an arrow or dot just restarts the count. */
-  function stop(){clearInterval(timer);timer=null}
-  function start(){stop();timer=setInterval(function(){show(idx+1)},HERO_DELAY)}
+  /* Moves to the next slide after HERO_DELAY ms (or that slide's own "delay" in data.js, used by the video slide).
+     Clicking an arrow or dot just restarts the count. */
+  function delayOf(n){var h=n>0?HERO[n-1]:null;return(h&&h.delay)||HERO_DELAY}
+  function stop(){clearTimeout(timer);clearTimeout(holdT);timer=holdT=null}
+  function start(){stop();timer=setTimeout(function(){show(idx+1);start()},delayOf(idx))}
+  /* the visitor is tapping the live phone: stay on this slide until they have been idle for 10 seconds */
+  box.addEventListener("liveinteract",function(){stop();holdT=setTimeout(function(){show(idx+1);start()},10000)});
   box.addEventListener("click",function(e){
     var b=e.target.closest?e.target.closest("button"):null;if(!b)return;
     if(b.classList.contains("next"))show(idx+1);
@@ -79,7 +106,7 @@ function renderCats(){
       '<div class="cat-copy"><h3>'+g.name+'</h3><p>'+c.desc+'</p></div>'+
       '<span class="cat-count">'+(n?('View '+n+' product'+(n==1?'':'s')):'Coming soon')+'</span>'+
       (c.photos&&c.photos.length
-        ?'<div class="cat-photos">'+c.photos.map(function(p){return '<img'+(/\.png$/i.test(p)?' class="cut"':'')+' src="'+BASE+'images/home/'+p+'" alt="" loading="lazy">'}).join("")+'</div>'
+        ?'<div class="cat-photos">'+c.photos.map(function(p){return '<img'+(/(\.png|-cut\.webp)$/i.test(p)?' class="cut"':'')+' src="'+BASE+'images/home/'+p+'" alt="" loading="lazy">'}).join("")+'</div>'
         :'<img class="cat-art" src="'+BASE+'images/home/'+c.art+'" alt="" loading="lazy">')+
     '</a>';
   }).join("");

@@ -21,6 +21,7 @@ var shopMenu=GROUPS.map(function(x){return '<a href="'+BASE+'categories/'+x.slug
 var headerHTML=
 '<header>'+
   '<div class="wrap">'+
+    '<button class="ib mb" id="mb" aria-label="Menu" aria-expanded="false" aria-controls="mmenu"><svg class="ic-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><svg class="ic-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>'+
     '<div class="hdr-left"><a class="hdr-brand" href="'+BASE+'index.html" aria-label="Secure Sight Home Autos">Secure Sight<span>Home Autos</span></a>'+
     '<nav aria-label="Main">'+
       '<a href="'+BASE+'index.html" data-p="home"'+(NAVON=="home"?' class="on"':'')+'>Home</a>'+
@@ -39,6 +40,20 @@ var headerHTML=
   '</div>'+
   '<div id="sbar"><div class="wrap"><input id="q" type="search" placeholder="Search products…" aria-label="Search products"><button class="sx" id="sx" aria-label="Close search">×</button></div></div>'+
 '</header>';
+
+/* ---------- PHONE MENU (opens from the hamburger button; phones only) ---------- */
+function mmLink(href,label,icon,on){return '<a href="'+BASE+href+'"'+(on?' class="on"':'')+'>'+(icon?'<svg viewBox="0 0 24 24" aria-hidden="true">'+icon+'</svg>':'')+'<span>'+label+'</span></a>'}
+var menuHTML=
+'<div class="mmenu" id="mmenu"><nav class="mm-in" aria-label="Menu">'+
+  mmLink("index.html","Home","",PAGE=="home")+
+  mmLink("shop.html","Shop all products","",NAVON=="shop"&&PAGE=="shop")+
+  '<p class="mm-h">Shop by category</p>'+
+  '<div class="mm-grid">'+GROUPS.map(function(x){return mmLink("categories/"+x.slug+".html",x.name,x.icon,false)}).join("")+'</div>'+
+  mmLink("about.html","About us","",PAGE=="about")+
+  mmLink("contact.html","Contact us","",PAGE=="contact")+
+  '<a class="mm-wa" data-wa="Hello Secure Sight Home Autos" href="#" target="_blank" rel="noopener">'+ICON_WA+'<span>Chat with us on WhatsApp</span></a>'+
+'</nav></div>';
+var fabHTML='<a class="wa-fab" data-wa="Hello Secure Sight Home Autos, I need some help" href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">'+ICON_WA+'</a>';
 
 /* ---------- FOOTER ---------- */
 function fl(href,label){return '<a href="'+BASE+href+'">'+label+'</a>'}
@@ -66,7 +81,7 @@ var footerHTML=
     '</div>'+
   '</div>'+
 '</footer>'+
-'<div id="toast" role="status" aria-live="polite"></div>';
+menuHTML+fabHTML+'<div id="toast" role="status" aria-live="polite"></div>';
 
 /* ---------- INSERT INTO THE PAGE ---------- */
 function put(id,html,where){
@@ -111,5 +126,18 @@ document.addEventListener("click",function(e){
   if(!t.closest("#shopdd"))closeShopMenu();
   if(b&&b.id=="ft-join"){var fv=g("ft-em").value.trim();g("ft-jm").textContent=fv.indexOf("@")>0?"You're on the list! (demo — nothing was saved).":"Enter a valid email address."}
 });
-document.addEventListener("keydown",function(e){if(e.key=="Escape")closeShopMenu()});
+document.addEventListener("keydown",function(e){if(e.key=="Escape"){closeShopMenu();mmClose()}});
+
+/* ---------- PHONE MENU: open / close ---------- */
+var mb=g("mb"),mm=g("mmenu"),root=document.documentElement;
+function mmClose(){if(!root.classList.contains("mm-open"))return;root.classList.remove("mm-open");mb.setAttribute("aria-expanded","false");mb.setAttribute("aria-label","Menu")}
+mb.addEventListener("click",function(){
+  var open=!root.classList.contains("mm-open");
+  if(open){sbar.classList.remove("on")}
+  root.classList.toggle("mm-open",open);mb.setAttribute("aria-expanded",open?"true":"false");mb.setAttribute("aria-label",open?"Close menu":"Menu");
+});
+mm.addEventListener("click",function(e){if(e.target.closest&&e.target.closest("a"))mmClose()});
+window.addEventListener("resize",function(){if(window.innerWidth>760)mmClose()});
+window.addEventListener("pageshow",mmClose);
+document.addEventListener("click",function(e){var t=e.target;if(t.closest&&t.closest("#sb"))mmClose()});
 })();

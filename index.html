@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="css/pages.css">
 <link rel="stylesheet" href="css/shop.css">
 <link rel="stylesheet" href="css/home.css">
+<link rel="stylesheet" href="css/phone.css">
+<link rel="stylesheet" href="css/showroom.css">
+<link rel="stylesheet" href="css/locks.css">
+<link rel="stylesheet" href="css/spots.css">
 </head>
 <body data-page="home">
 <div id="site-header"></div>
@@ -16,8 +20,7 @@
 <div class="slider" id="slider" role="region" aria-roledescription="carousel" aria-label="Featured products" tabindex="0" data-tone="light">
 <div class="slide slide-home on" data-tone="light" role="group" aria-roledescription="slide" aria-label="1 of 5">
 <svg class="slide-arcs" viewBox="0 0 1600 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="3" opacity=".85"><circle cx="1130" cy="400" r="190"/><circle cx="1130" cy="400" r="300"/><circle cx="1130" cy="400" r="410"/><circle cx="1130" cy="400" r="520"/><circle cx="1130" cy="400" r="630"/><circle cx="1130" cy="400" r="740"/></g></svg>
-<div class="home-stage"><img class="st-photo" src="images/home/hero/lineup.webp" alt="Smart door lock, touch control panel, 3-gang touch switch and smoke detector"></div>
-<img class="slide-img" data-banner="images/hero/slide-0-home" alt="">
+<div class="home-stage"><img class="st-photo" src="images/home/hero/lineup.webp" srcset="images/home/hero/lineup-sm.webp 720w, images/home/hero/lineup.webp 1000w" sizes="(max-width:760px) 90vw, 560px" fetchpriority="high" decoding="async" alt="Smart door lock, touch control panel, 3-gang touch switch and smoke detector"></div>
 <p class="slide-brand">Secure Sight<span>Home Autos</span></p>
 <div class="slide-in"><div class="slide-copy home-copy">
   <h1><b>Build Your<br>Smart Home</b> with Secure Sight</h1>
@@ -45,17 +48,17 @@
   </ul>
 </div></div>
 
-<div class="spot"><div class="wrap spot-in">
+<div class="spot" data-spot="locks"><div class="wrap spot-in">
   <div class="spot-copy"><h2>Open your door with a face, a fingerprint or your phone</h2><p>Face recognition, fingerprint, PIN and app locks for homes, hotels and apartments, with the cards, gateways and accessories to go with them.</p><a class="btn lg dk" href="categories/access-control.html">Shop access control</a></div>
   <img src="images/hero/art/locks.svg" alt="" loading="lazy">
 </div></div>
 
-<div class="spot dk flip"><div class="wrap spot-in">
+<div class="spot dk flip" data-spot="lights"><div class="wrap spot-in">
   <div class="spot-copy"><h2>Lights and switches you control from your phone</h2><p>Wi-Fi and Zigbee wall switches from one gang to four, plus smart bulbs, downlights and dimmers that work with the Tuya and eWeLink apps.</p><a class="btn lg light" href="categories/lighting.html">Shop lighting</a></div>
   <img src="images/home/spot-lighting.svg" alt="" loading="lazy">
 </div></div>
 
-<div class="spot warm"><div class="wrap spot-in">
+<div class="spot warm" data-spot="panels"><div class="wrap spot-in">
   <div class="spot-copy"><h2>One panel for the whole house</h2><p>Touch panels, Zigbee gateways and universal remotes that bring your lights, locks and sensors together in one place.</p><a class="btn lg dk" href="categories/control-panels-gateway.html">Shop control panels</a></div>
   <img src="images/home/spot-panels.svg" alt="" loading="lazy">
 </div></div>
@@ -80,6 +83,10 @@
 <script src="js/data.js"></script>
 <script src="js/layout.js"></script>
 <script src="js/core.js"></script>
+<script src="js/phone.js"></script>
+<script src="js/showroom.js"></script>
+<script src="js/locks.js"></script>
 <script src="js/home.js"></script>
+<script src="js/spots.js"></script>
 </body>
 </html>

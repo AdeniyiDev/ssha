@@ -1,0 +1,108 @@
+/* =====================================================================
+   spots.css  -  the three bands under the home slider, alive on scroll (see js/spots.js).
+   Class names here start with lt- (lighting), pn- (panels), lk- (locks), sp (reveal) so they
+   never clash with the sliders' classes.
+   ===================================================================== */
+
+/* ---------- scroll reveal (only when JS is running; reduced motion skips it) ---------- */
+.rv .spot:not(.in) .spot-copy>*,.rv .spot:not(.in) .spot-art{opacity:0}
+.rv .spot.in .spot-copy>*{animation:spUp .8s cubic-bezier(.2,.8,.2,1) backwards}
+.rv .spot.in .spot-copy>*:nth-child(2){animation-delay:.12s}
+.rv .spot.in .spot-copy>*:nth-child(3){animation-delay:.24s}
+.rv .spot.in .spot-art{animation:spArt 1s cubic-bezier(.2,.8,.2,1) .1s backwards}
+@keyframes spUp{from{opacity:0;transform:translateY(24px)}}
+@keyframes spArt{from{opacity:0;transform:translateY(34px) scale(.965)}}
+/* the picture drifts a touch differently from the text while scrolling */
+.spot-art .pa{transform:translate3d(0,calc(var(--pv,0)*1px),0);will-change:transform}
+.spot-art{min-width:0}
+
+/* ---------- 1. locks: the same stage as the slider, sized for the band ---------- */
+.spot-art .live.lk{position:relative;left:auto;right:auto;bottom:auto;display:block;padding:0;margin:0 auto;
+  --LH:min(412px,calc((100vw - 48px - 5vw)*.52*.7436));height:var(--LH);width:calc(var(--LH)*702/522);aspect-ratio:702/522}
+.spot-art .lks{width:100%;height:100%;flex:none}
+.spot .lkp img{max-height:none}
+@media(max-width:860px){.spot-art .live.lk{--LH:min(412px,calc((100vw - 48px)*.7436))}}
+/* the small "face -> unlocked" tag above the middle lock */
+.lk-tag{position:absolute;left:64%;top:12.5%;display:flex;align-items:center;gap:calc(var(--u)*7);white-space:nowrap;
+  padding:calc(var(--u)*8) calc(var(--u)*16) calc(var(--u)*8) calc(var(--u)*12);border-radius:calc(var(--u)*30);
+  background:#fff;color:#00202f;font:600 calc(var(--u)*14)/1 "Helvetica Neue",Helvetica,Arial,sans-serif;box-shadow:0 calc(var(--u)*8) calc(var(--u)*20) rgba(10,36,50,.18)}
+.lk-tag i{position:static;flex:none;display:block;width:calc(var(--u)*11);height:calc(var(--u)*11);border-radius:50%;background:#2fa8e0;box-shadow:0 0 0 calc(var(--u)*4) rgba(47,168,224,.2);transition:background .3s,box-shadow .3s}
+.lk-tag.ok i{background:#2fa8e0;box-shadow:0 0 0 calc(var(--u)*4) rgba(47,168,224,.35)}
+.lk-tag.open i{background:#2e9e6b;box-shadow:0 0 0 calc(var(--u)*4) rgba(46,158,107,.28)}
+.lk-tag.open{color:#1f7a52}
+.live.run .lk-tag{animation:lkTagIn .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes lkTagIn{from{opacity:.4;transform:translateY(calc(var(--u)*6))}}
+
+/* ---------- 2. lighting ---------- */
+.lt,.pn{display:block;width:100%;height:auto;max-height:520px;overflow:visible;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+.lt-line{fill:#35505f}
+.lt-cord{stroke:#5d7a8a;stroke-width:3;fill:none}
+.lt-cap{fill:#8aa0ad}
+.lt-body{fill:#2c4352;transition:fill .45s}
+.lt-g.on .lt-body{fill:#fff0bd}
+.lt-h1,.lt-h2{fill:#ffe08a;opacity:0;transition:opacity .55s;transform-box:fill-box;transform-origin:center}
+.lt-g.on .lt-h1{opacity:.1}.lt-g.on .lt-h2{opacity:.15}
+.lt-bl{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.6);transition:opacity .6s,transform .7s}
+.lt-g.on .lt-bl{opacity:1;transform:scale(1)}
+.lt.run .lt-g.on .lt-h1{animation:ltBreathe 4.2s ease-in-out infinite}
+.lt.run .lt-g.on .lt-h2{animation:ltBreathe 4.2s ease-in-out -1.4s infinite}
+@keyframes ltBreathe{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+.lt-sig{fill:none;stroke:#3d5a6a;stroke-width:2;stroke-dasharray:3 8;stroke-linecap:round}
+.lt-p{fill:none;stroke:#ffd25a;stroke-width:4;stroke-linecap:round;stroke-dasharray:14 100;stroke-dashoffset:14;opacity:0}
+.lt-p.fire{animation:ltFire .9s ease-out}
+@keyframes ltFire{0%{opacity:1;stroke-dashoffset:14}80%{opacity:1}100%{opacity:0;stroke-dashoffset:-100}}
+.lt-img{filter:drop-shadow(0 10px 16px rgba(0,0,0,.55))}
+/* the touch rings on the real switch: dark when the light is off, glowing when on */
+.lt-m{opacity:1;transition:opacity .35s}
+.lt-r.on .lt-m{opacity:0}
+.lt-rg{fill:url(#ltRing);opacity:0;mix-blend-mode:screen;transition:opacity .35s}
+.lt-r.on .lt-rg{opacity:1}
+.lt-m{fill:url(#ltMask)}
+.lt-wifi{fill:none;stroke:#6cc8ff;stroke-width:2;opacity:0;transform-box:fill-box;transform-origin:center}
+.lt.run .lt-wifi{animation:ltWifi 2.2s ease-out infinite}
+@keyframes ltWifi{0%{opacity:.85;transform:scale(.5)}100%{opacity:0;transform:scale(2.4)}}
+.lt-hit{fill:transparent;cursor:pointer;outline:none}
+.lt-hit:focus-visible{stroke:#6cc8ff;stroke-width:2}
+
+/* on phones the three switch buttons are too close together for a finger: tapping the switch toggles all three lights */
+.lt-all{fill:transparent;display:none;cursor:pointer;outline:none}
+.lt-all:focus-visible{stroke:#6cc8ff;stroke-width:2}
+@media(max-width:760px){.lt-all{display:block}.lt-hit[role]{display:none}}
+
+/* ---------- 3. control panels ---------- */
+.pn-line{fill:none;stroke:#b9b5a6;stroke-width:2.4;stroke-dasharray:3 8;stroke-linecap:round}
+.pn-p{fill:none;stroke:#2e9e6b;stroke-width:4;stroke-linecap:round;stroke-dasharray:14 100;stroke-dashoffset:14;opacity:0}
+.pn-p.fire{animation:pnFire .85s ease-out}
+@keyframes pnFire{0%{opacity:1;stroke-dashoffset:14}80%{opacity:1}100%{opacity:0;stroke-dashoffset:-100}}
+.pn-dev{filter:drop-shadow(0 12px 14px rgba(10,36,50,.28))}
+.pn-panel{filter:drop-shadow(0 22px 22px rgba(10,36,50,.32))}
+.pn-ring{fill:none;stroke:#2e9e6b;stroke-width:3;opacity:0;transform-box:fill-box;transform-origin:center}
+.pn-ring.fire{animation:pnRing 1s ease-out}
+@keyframes pnRing{0%{opacity:.7;transform:scale(.7)}100%{opacity:0;transform:scale(1.35)}}
+.pn-tile{fill:#fff;opacity:0;mix-blend-mode:screen}
+.pn-tile.fire{animation:pnTile 1s ease-out}
+@keyframes pnTile{0%{opacity:.7}100%{opacity:0}}
+.pn-hit{fill:transparent;cursor:pointer;outline:none}
+.pn-hit:focus-visible{stroke:#fff;stroke-width:6}
+.pn-cb{fill:#fff;filter:drop-shadow(0 6px 10px rgba(10,36,50,.18))}
+.pn-ct{font-size:15.5px;font-weight:700;fill:#00202f}
+.pn-cd{fill:#9aa7ae;transition:fill .3s}
+.pn-cd.g{fill:#2e9e6b}.pn-cd.a{fill:#e0a63a}.pn-cd.n{fill:#9aa7ae}
+.pn-pill rect{fill:#00202f}
+.pn-pt{font-size:17px;font-weight:700;fill:#fff;letter-spacing:.02em}
+.pn-pill.fire{animation:pnPill .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes pnPill{from{opacity:.3;transform:translateY(8px)}}
+.pn.run .pn-panel{animation:pnFloat 6s ease-in-out infinite}
+@keyframes pnFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+
+/* phones: two big buttons under the picture (the tiles on the panel are too small to tap) */
+.pn-btns{display:none}
+@media(max-width:760px){
+  .pn-btns{display:flex;gap:10px;margin-top:14px}
+  .pn-b{flex:1;min-height:48px;border-radius:12px;border:1.5px solid #00202f;background:#fff;color:#00202f;font:600 15px/1 "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer;transition:background .2s,color .2s}
+  .pn-b.on{background:#00202f;color:#fff}
+  .pn-hit{display:none}
+}
+
+/* visitors who prefer reduced motion: nothing moves, nothing pulses */
+@media(prefers-reduced-motion:reduce){.lt *,.pn *,.lk-tag{animation:none!important;transition:none!important}}

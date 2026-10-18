@@ -1,0 +1,101 @@
+/* =====================================================================
+   showroom.css  -  the LIVE product showroom slide (see js/showroom.js).
+   Layout (text left, display right) comes from phone.css (.slide.has-live, .live).
+   Everything inside is sized in "em": the stage is 59 x 60 em and
+   1em = stage height / 60, so it scales as one piece.
+   Places (s0 = the big one in the middle, s1-s4 = the ones floating around it).
+   ===================================================================== */
+
+.live.sr{--LH:calc(var(--H) - var(--pt) - 72px);height:var(--LH);aspect-ratio:59/60}
+.srs{position:relative;width:calc(var(--LH)*59/60);height:var(--LH);font-size:calc(var(--LH)/60);flex:none}
+.srs>i{position:absolute;display:block;pointer-events:none}
+
+/* this display is wider than the old one, so this slide gets a wider column too */
+.slide.live-showroom .slide-in{max-width:1320px}
+@media(min-width:1700px){.slide.live-showroom .slide-in{max-width:1500px}}
+@media(max-width:1380px) and (min-width:1181px){
+  .slide.live-showroom .slide-in{padding-left:76px;padding-right:76px}
+  .live.sr{--LH:min(calc(var(--H) - var(--pt) - 72px),calc((100vw - 152px - 500px - 58px)/.9833))}
+}
+@media(max-width:1180px) and (min-width:901px){.live.sr{--LH:min(calc(var(--H) - var(--pt) - 72px),calc((100vw - 152px - 440px - 44px)/.9833))}}
+
+/* ---------- the set: rings, glow, signal ---------- */
+.sr-ring{left:3.3em;top:2.8em;width:52.4em;height:52.4em;border-radius:50%;border:1px solid rgba(170,195,255,.17)}
+.sr-orb{left:9em;top:8.5em;width:41em;height:41em;border-radius:50%;border:1px dashed rgba(170,195,255,.14)}
+.sr-orb:after{content:"";position:absolute;left:50%;top:-.45em;width:.9em;height:.9em;margin-left:-.45em;border-radius:50%;background:#8fd6ff;box-shadow:0 0 1.2em .3em rgba(108,200,255,.9)}
+.live.run .sr-orb{animation:srOrbit 15s linear infinite}
+@keyframes srOrbit{to{transform:rotate(360deg)}}
+.sr-glow{left:15.5em;top:37.4em;width:28em;height:9em;border-radius:50%;background:radial-gradient(closest-side,rgba(108,200,255,.62),rgba(108,200,255,0));filter:blur(.8em);opacity:.8}
+.live.run .sr-glow{animation:srGlow 3.2s ease-in-out infinite}
+@keyframes srGlow{0%,100%{opacity:.55}50%{opacity:1}}
+/* soft rings of signal spreading from the middle product */
+.sr-ping,.sr-flash{left:15em;top:14em;width:28em;height:28em;border-radius:50%;border:.15em solid rgba(108,200,255,.55);opacity:0}
+.live.run .sr-ping{animation:srPing 3.6s ease-out infinite}
+.live.run .sr-ping.p2{animation-delay:1.8s}
+@keyframes srPing{0%{opacity:.5;transform:scale(.78)}100%{opacity:0;transform:scale(1.9)}}
+/* a quick, brighter ring each time a new product takes the middle */
+.sr-flash{border-width:.3em;border-color:rgba(160,225,255,.9)}
+.sr-flash.go{animation:srFlash .8s ease-out}
+@keyframes srFlash{0%{opacity:.9;transform:scale(.7)}100%{opacity:0;transform:scale(1.7)}}
+.sr-dot{left:28.5em;top:9em;width:.95em;height:.95em;border-radius:50%;background:#6cc8ff;box-shadow:0 0 0 .6em rgba(108,200,255,.18),0 0 1.6em rgba(108,200,255,.9)}
+.live.run .sr-dot{animation:srDot 1.8s ease-in-out infinite}
+@keyframes srDot{0%,100%{opacity:.55}50%{opacity:1}}
+
+/* ---------- the products ---------- */
+.sr-cards{position:absolute;inset:0;transform:perspective(100em) rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));transition:transform .3s ease-out}
+.sc{position:absolute;display:block;color:inherit;text-decoration:none;cursor:pointer;z-index:1;
+    transform:rotate(var(--rot,0deg));
+    transition:left .95s cubic-bezier(.3,.85,.25,1),top .95s cubic-bezier(.3,.85,.25,1),width .95s cubic-bezier(.3,.85,.25,1),height .95s cubic-bezier(.3,.85,.25,1),transform .95s cubic-bezier(.3,.85,.25,1)}
+.live.reset .sc{transition:none!important}
+.sc.s0{left:15em;top:14em;width:28em;height:28em;--rot:0deg;z-index:5}
+.sc.s1{left:2.7em;top:6.6em;width:12em;height:21.5em;--rot:-5deg}
+.sc.s2{left:47.3em;top:5.6em;width:11.2em;height:12em;--rot:5deg}
+.sc.s3{left:48.1em;top:38.2em;width:12.4em;height:12.4em;--rot:4deg}
+.sc.s4{left:1.3em;top:39.8em;width:12.8em;height:10.8em;--rot:-4deg}
+.sc .f,.sc .sc-a{position:absolute;inset:0;display:block}
+.live.run .sc .f{animation:srFloat 5.6s ease-in-out infinite}
+.live.run .sc:nth-child(2) .f{animation-duration:6.4s;animation-delay:-2s}
+.live.run .sc:nth-child(3) .f{animation-duration:5.1s;animation-delay:-1.2s}
+.live.run .sc:nth-child(4) .f{animation-duration:6s;animation-delay:-3.3s}
+.live.run .sc:nth-child(5) .f{animation-duration:5.5s;animation-delay:-4.1s}
+@keyframes srFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.1em)}}
+.sc img,.sc .sc-a svg{display:block;width:100%;height:100%;object-fit:contain;user-select:none;-webkit-user-drag:none;
+    filter:drop-shadow(0 2.6em 3em rgba(0,0,25,.55));transition:filter .95s}
+.sc.s0 img,.sc.s0 .sc-a svg{filter:drop-shadow(0 3.4em 3.4em rgba(0,0,25,.6)) drop-shadow(0 0 3em rgba(108,200,255,.3))}
+/* a product photo with its own white background (not a cut-out): put it on a small light tile */
+.sc.tile .sc-a{background:#f4f5fb;border-radius:2em;overflow:hidden}
+.sc.tile img,.sc.tile .sc-a svg{padding:7%;mix-blend-mode:multiply;filter:none}
+
+/* name + price under each floating product (the middle one has the bigger card below instead) */
+.sc .cap{position:absolute;top:100%;left:50%;transform:translateX(-50%) rotate(calc(var(--rot,0deg)*-1));margin-top:1.4em;width:13.6em;
+    text-align:center;font-size:1.25em;letter-spacing:.1em;text-transform:uppercase;line-height:1.5;color:rgba(255,255,255,.72);
+    transition:opacity .5s}
+.sc .cap b{display:block;font-size:1.2em;letter-spacing:.02em;text-transform:none;color:#fff;font-weight:700}
+.sc.s0 .cap{opacity:0}
+.sc:hover .cap{color:#fff}
+
+/* the big name + price card under the middle product */
+.sr-label{position:absolute;left:15.6em;top:45.6em;width:31.8em;z-index:8;display:flex;align-items:center;justify-content:space-between;gap:1.6em;min-height:5.6em;padding:1.1em 1.9em;border-radius:2.4em;
+    color:#fff;text-decoration:none;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.sr-label.in{animation:srLabelIn .5s cubic-bezier(.2,.8,.2,1)}
+@keyframes srLabelIn{from{opacity:0;transform:translateY(1.2em)}to{opacity:1;transform:none}}
+.srl-t{min-width:0;display:block}
+.srl-c{display:block;font-size:1.15em;letter-spacing:.1em;text-transform:uppercase;opacity:.65;margin-bottom:.35em;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.srl-n{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:1.55em;line-height:1.2;font-weight:700}
+.srl-r{flex:none;text-align:right}
+.srl-p{display:block;font-size:1.85em;font-weight:700;line-height:1.1}
+.srl-r i{display:block;font-style:normal;font-size:1.35em;margin-top:.35em;color:#8fd6ff;font-weight:600}
+.sr-label:hover .srl-r i{text-decoration:underline}
+
+/* (visitors who prefer reduced motion: phone.css already switches all animation and movement off) */
+
+/* ---------- phones and tablets in portrait: text on top, the display underneath ---------- */
+@media(max-width:900px){
+  .live.sr{--LH:min(330px,calc(var(--H)*.5 - 46px));height:calc(var(--LH) + 46px);aspect-ratio:auto}
+  .sc .cap{display:none}
+  .sr-label{left:3em;width:53em;top:46em;min-height:0;padding:.9em 1.6em;border-radius:1.8em}
+  .srl-c{display:none}
+  .srl-n{font-size:max(12px,2em);-webkit-line-clamp:1}
+  .srl-p{font-size:max(13px,2.2em)}
+  .srl-r i{display:none}
+}

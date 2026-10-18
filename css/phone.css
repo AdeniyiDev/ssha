@@ -1,0 +1,101 @@
+/* =====================================================================
+   phone.css  -  the LIVE phone slide (see js/phone.js).
+   Layout: the text and the phone sit in ONE centred row, like the video slide.
+   Colours: green = on, navy = the brand colour.
+   ===================================================================== */
+
+/* ---------- layout (text on the left, phone on the right) ---------- */
+.slide.has-live{--pt:clamp(72px,11vh,100px)}
+.slide.has-live .slide-in{display:grid;grid-template-columns:minmax(0,500px) auto;justify-content:center;align-items:center;column-gap:clamp(24px,4vw,64px);padding-top:var(--pt);padding-bottom:72px}
+.live{height:calc(var(--H) - var(--pt) - 72px);aspect-ratio:560/660}
+@media(max-width:1000px) and (min-width:761px){.live{height:min(calc(var(--H) - var(--pt) - 72px),520px)}}
+/* smaller laptops: keep the text clear of the slider arrows */
+@media(max-width:1180px) and (min-width:761px){.slide.has-live .slide-in{grid-template-columns:minmax(0,440px) auto;padding-left:76px;padding-right:76px}}
+.live>svg{display:block;width:100%;height:100%;overflow:visible;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-tap-highlight-color:transparent;user-select:none;-webkit-user-select:none}
+
+/* ---------- phone screen ---------- */
+.live .pt{font-size:18px;font-weight:700;fill:#00202f}
+.live .ps{font-size:11.5px;fill:#7a8a94}
+.live .rbg{fill:#f1f4f5;stroke:transparent;stroke-width:2;transition:fill .25s}
+.live .row{cursor:pointer;outline:none}
+.live .row.on .rbg{fill:#e8f4ee}
+.live .row:focus-visible .rbg{stroke:#00202f}
+.live .ri{fill:none;stroke:#fff;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.live .rn{font-size:13.5px;font-weight:700;fill:#00202f}
+.live .st{font-size:11.5px;fill:#7a8a94}
+.live .row.on .st{fill:#1f7a52}
+.live .tk{fill:#c9d0d5;transition:fill .25s}
+.live .row.on .tk{fill:#2e9e6b}
+.live .kn{fill:#fff;transition:transform .28s cubic-bezier(.3,1.5,.5,1)}
+.live .row.on .kn{transform:translateX(16px)}
+
+/* ---------- floating device cards ---------- */
+.live .card{cursor:pointer;transform-box:fill-box;transform-origin:center}
+.live .cw{fill:#fff;transition:fill .2s}
+.live .cs{fill:#d3d9dd}
+.live .card:hover .cw{fill:#f4f8f9}
+.live .ci{fill:none;stroke:#00202f;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+
+/* light: bulb fills with warm yellow and gives off a glow */
+.live .glow{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.55);transition:opacity .45s,transform .45s}
+.live .card.on .glow{opacity:1;transform:scale(1)}
+.live .bfill{fill:transparent;transition:fill .3s}
+.live .card.on .bfill{fill:#ffc933}
+
+/* lock: the shackle lifts when unlocked, drops and turns green when locked */
+.live .shackle{transform-box:view-box;transform-origin:16px 11px;transform:translateY(-2.6px) rotate(-26deg);transition:transform .38s cubic-bezier(.3,1.6,.5,1)}
+.live .card.on .shackle{transform:none}
+.live .lbody{fill:transparent;transition:fill .3s}
+.live .card.on .lbody{fill:#2e9e6b;stroke:#1f7a52}
+.live .kh{fill:#00202f;transition:fill .3s}
+.live .card.on .kh{fill:#fff}
+
+/* plug: turns green with a ring that pulses outward */
+.live .pbody{fill:transparent;transition:fill .3s}
+.live .card.on .pbody{fill:#2e9e6b;stroke:#1f7a52}
+.live .pslot{transition:stroke .3s}
+.live .card.on .pslot{stroke:#fff}
+.live .pring,.live .rip{fill:none;stroke:#2e9e6b;stroke-width:2.5;opacity:0;transform-box:fill-box;transform-origin:center}
+
+/* sensor: when armed, waves ripple outward */
+.live .sdot{fill:#00202f;transition:fill .3s}
+.live .sarc{transition:stroke .3s}
+.live .card.on .sdot{fill:#2e9e6b;stroke:#2e9e6b}
+.live .card.on .sarc{stroke:#2e9e6b}
+
+/* ---------- connecting lines: a pulse of light travels phone -> device ---------- */
+.live .conn{fill:none;stroke:#9fb0ba;stroke-width:2.2;stroke-dasharray:3 8;stroke-linecap:round}
+.live .pulse{fill:none;stroke:#2e9e6b;stroke-width:4;stroke-linecap:round;stroke-dasharray:16 100;stroke-dashoffset:16;opacity:0}
+.live .pulse.fire{animation:lpFire .85s ease-out}
+@keyframes lpFire{0%{opacity:1;stroke-dashoffset:16}80%{opacity:1}100%{opacity:0;stroke-dashoffset:-100}}
+
+/* ---------- ambient life: only runs while this slide is showing ---------- */
+.live.run .phone{animation:lpBob 6s ease-in-out infinite}
+.live.run .card{animation:lpDrift 5.6s ease-in-out infinite}
+.live.run .card[data-d=lock]{animation-duration:6.6s;animation-delay:-2.2s}
+.live.run .card[data-d=plug]{animation-duration:5.1s;animation-delay:-1.1s}
+.live.run .card[data-d=sensor]{animation-duration:6.1s;animation-delay:-3.4s}
+@keyframes lpBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes lpDrift{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.live.run .card.on .rip{animation:lpRip 2.2s ease-out infinite}
+.live.run .card.on .rip.r2{animation-delay:1.1s}
+.live.run .card.on .pring{animation:lpRip 2.4s ease-out infinite}
+@keyframes lpRip{0%{transform:scale(.55);opacity:.55}100%{transform:scale(2.5);opacity:0}}
+
+/* "Tap any switch" hint: gently pulses until the visitor taps something */
+.live .hint{transition:opacity .4s;pointer-events:none}
+.live.run .hint{animation:lpHint 2.2s ease-in-out infinite}
+@keyframes lpHint{0%,100%{opacity:.6}50%{opacity:1}}
+.live.touched .hint{animation:none;opacity:0}
+
+/* visitors who prefer reduced motion: no movement, everything shown switched on */
+@media(prefers-reduced-motion:reduce){.live *{animation:none!important;transition:none!important}}
+
+/* ---------- phones: text on top, the phone underneath ---------- */
+@media(max-width:900px){
+  .slide.has-live .slide-in{display:flex;align-items:flex-start;justify-content:flex-start;padding-top:28px;padding-bottom:0;padding-left:24px;padding-right:24px}
+  .live[data-live=phone]{height:56%}
+  .live{position:absolute;left:0;right:0;bottom:0;height:44%;aspect-ratio:auto;display:flex;justify-content:center;padding:0 0 46px}
+  .live>svg{width:auto;height:100%;max-width:100%}
+  .slide.has-live .slide-apps,.slide.has-live .slide-logos{display:none}
+}

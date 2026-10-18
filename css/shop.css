@@ -97,3 +97,6 @@
 .pg-nums button.on{background:var(--navy);color:#fff;border-color:var(--navy);cursor:default}
 .pg-dots{color:#aaa;padding:0 4px}
 @media(max-width:480px){.pg-nav{min-width:0;padding:9px 12px}}
+
+/* phones: labels on product cards were 10px, too small to read */
+@media(max-width:760px){.card .cat-pill,.card .inst-badge,.card .sale-badge,.card .card-brand{font-size:11px}.card h3 a{display:block;padding:6px 0;margin:-6px 0}}
